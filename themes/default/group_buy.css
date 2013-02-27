@@ -1,0 +1,119 @@
+/*
+Template Name: ECSHOP Default
+Template URI: http://www.ecshop.com/
+Description: 默认升级版.
+Version: 2.7.2
+Author: ECSHOP Team
+Author URI: http://www.ecshop.com/
+Logo filename: logo.gif
+Template Type: type_0
+*/
+
+em, i {font-style: normal;}
+
+.w960{width:1000px;margin: 0 auto;}
+.of {overflow: hidden;}
+.fr {float: right;display: inline;}
+.p10 {padding: 10px;}
+
+.border, .gp_detail {border: 1px solid #DDD;}
+.gp_detail {border-bottom-color: white;border-radius: 3px 3px 0 0;}
+.gp_sp,.process .fr .gp_sp ,.gp_sSubmit,.gp_sText,#inquiry,.gp_sortWrap a,.gp_wBtn,.priceBar a,.gp_time_timer b,.gp_status_subRight,.gp_status_subLeft,.gp_status_main,.gp_myGp,.gp_boxShadow,.gp_cartNav dd ,.gp_cartTotal .gp_sp,.gp_numCont em,.gp_numCont i,.uiTable th,.uiTable th,.skin2 #yb_tipI_title,#trueBtn,#cancelBtn,.gp_share_sp,.gp_detailAnchor a,.gp_detailAnchor span,.gp_searMsgWrap .fr a,.gp_group_grid td,#gp_adsClose,#dropmenu,#dropmenu ul,#btnCity,.gp_tp a.current s{background-image:url(images/sprite1.png)}
+
+
+
+/*gp_choicePane*/
+.gp_cPane_dl{clear:both;padding:2px 0 0 0;*padding:2px 0 0 0}
+.gp_cPane_dl dt,.gp_cPane_dl dd{float:left;display:inline;line-height:22px}
+.gp_cPane_dl dt{width:49px;padding:0 0 0 8px}
+.gp_cPane_dl dd{position:relative;z-index:0}
+.gp_bb {border-bottom:1px solid #ddd;padding-top:8px;*padding:2px 0;margin-bottom:5px;clear:both}
+div.gp_choicePane{width:978px;border:1px solid #ddd;background:#fff;padding-top:8px;padding-bottom:7px}
+.gp_choicePane .gp_tp{padding:0 0 0 8px}
+.gp_choicePane .gp_tp a,
+#gp_quyu div b{display:inline-block;padding:0 13px;text-align:center;margin:0 0 2px -4px;cursor:pointer;color:#666;}
+.gp_choicePane .gp_tp a em,#gp_quyu div a em{color:#999}
+.gp_choicePane .gp_tp a.current,#gp_quyu div a.current{background:#f60;color:#fff;border-radius:3px}
+.gp_choicePane .gp_tp a.current em,#gp_quyu div a.current em{color:#fff}
+#gp_quyu div {margin:10px 0 5px; position:relative; z-index:0;left:-4px}
+#gp_quyu div p {*float:left;clear:both;border:1px solid #f7ca67;padding:2px 1px 0 10px;*padding-bottom:4px;background:#fef5e4}
+*+html #gp_quyu div p{ margin-bottom:5px;width:880px}
+#gp_quyu div p a,#gp_quyu div b{width:auto;padding:0;margin:0;line-height:22px;height:22px; *line-height:26px;display:inline-block;float: left;zoom:1}
+#gp_quyu div p a{margin:0 5px;padding:0 5px;margin-bottom:4px;*margin-bottom:0;}
+.custom{width:200px;height:22px;display:inline-block;vertical-align:middle;padding:0 0 0 15px}
+.custom b{float:left;height:22px;padding:0px 5px;color:#4d4d4d}
+.priceNum{float:left;width:49px;height:20px;line-height:20px;padding-left:2px;border:1px solid #ccc}
+#inquiry{cursor:pointer;position:relative;width:45px;height:21px;margin-left:10px;overflow:hidden;background-color:#eee;border:none;background-position:-294px -132px}
+
+
+/*gp_sortWrap*/
+div.gp_sortWrap {height:34px;line-height:34px;width:998px;background-repeat:repeat-x;background-color:#f9f9f9;color:#666;border:1px solid #DDD;color:#333;border-top:none;}
+.gp_sortWrap p{padding:0 18px;_margin:5px 0 0 0}
+.gp_sortWrap p span{margin-right:10px;_margin-right:0}
+.gp_sortWrap .fr a{background-position:-208px -60px}
+.gp_sortWrap a,.gp_searMsgWrap .fr a{width:53px;line-height:21px;height:20px;display:inline-block;text-align:center;border:1px solid #eee;border-right:1px solid #ccc;border-bottom:1px solid #ccc;background-position:-208px -60px;background-color:#eee;margin:0 0 0 -9px;_margin:0 0 0 -4px;color:#555;_overflow:hidden}
+.gp_sortWrap .current,.gp_sortWrap .current2{background-color:#fff;text-indent:-10px;background-position:-294px -101px}
+.gp_sortWrap .current2{background-position:-294px -84px}
+.gp_sortWrap .gp_last,.gp_searchNotice .gp_last{background-position:-1px -1px;color:#bbb; cursor:default;text-decoration:none}
+#gp_choice_input i{position:relative;z-index:0;top:0;left:5px;_top:-6px}
+#gp_choice_input input{height:20px;line-height:20px;width:51px;border:1px solid #ccc;background-color:#fbfbfb;margin:0 5px 0 5px;position:relative;left:5px}
+#gp_choice_input .gp_sp{background-position:0 -29px;width:45px;height:22px;vertical-align:bottom;border:none;cursor:pointer}
+.gp_choicePane .gp_tp .gp_choiceMore{color:#0066cc;position:relative;z-index:0}
+.gp_choicePane .gp_tp .gp_choiceMore b{position:absolute;z-index:1;width:0;height:0;line-height:0;font-size:0;border-width:5px;border-style:solid;border-color:#0066cc #fff #fff;top:9px;left:50px}
+.gp_choicePane .gp_tp .gp_choiceMore span{position:relative;z-index:0;left:7px;cursor:pointer; }
+
+#bPrev.disable:hover,#bNext.disable:hover{ text-decoration:none;cursor:default;}
+
+
+
+
+/*gp_detail*/
+.gp_detail{border-bottom-color:#fff;border-radius:3px 3px 0 0 }
+.gp_detail_wrap {width:1020px;margin-right:-20px}
+.gp_detail_des{font-size:14px;line-height:22px;padding:0 0 4px 0; margin-bottom:6px}
+.gp_detail_des a,.gp_detail_info,.gp_detail_timer,.gp_detail_timer b{color:#676767;padding:0 1px;font-family:"arial"}
+.gp_detail_des a{color:#333}
+.gp_detail {position:relative;padding:8px;height: 355px;width: 305px;background:#fff;float:left;display:inline;margin:14px 10px 0 3px;z-index:0}
+.gp_detail_img,.gp_detail_img img{display:block}
+.gp_detail_img img {width: 305px;height:200px;}
+.gp_detail_img:hover,.gp_aside_qt:hover img{display:block;opacity:0.92}
+/*gp_detail_info*/
+.gp_detail_info {width: 283px;height:26px;line-height:26px;padding:0 10px;border:1px solid #F4F4F4;background:#F4F4F4;border-bottom:none;border-top:none}
+.gp_detail_info span {padding:0 15px 0 0}
+.gp_detail_info span i{text-decoration:line-through;margin:0 0 0 6px;font-family:"tahoma"}
+.gp_detail_info em{float:right}
+.gp_detail_info b{color:#f60}
+/*gp_detail_price*/
+.gp_detail_price {height:48px;width:305px;overflow:hidden;position:relative;z-index:0}
+.gp_detail_price span,
+.gp_status_main span{font-size:28px;color:#fff;font-family:"Microsoft YaHei";line-height:48px;padding:0 0 0 4px}
+.gp_detail_price span b,.gp_status_main span b{font-family:"arial";font-size:40px;font-weight:normal;letter-spacing:0;padding:0;position:relative;z-index:0;left:-12px;_left:-10px;top:0}
+.gp_detail_price .gp_sp,.gp_status_main .gp_sp{position:absolute;z-index:1;top:16px;left:2px;_left:5px;display:block;width:24px;background-color:#d41f28}
+.gp_detail_price .fr,.gp_detail_price .fr:hover,.gp_status_main .fr,.gp_status_main .fr:hover{font-size:17px;color:#fff;font-weight:bold;font-family:"黑体";margin:13px 8px 0 0;*margin:13px 6px 0 0;position:relative;z-index:0;top:0;left:0;text-decoration:none;text-indent: -2px;}
+.gp_detail_price .fr .gp_sp, .gp_status_main .fr .gp_sp{position:absolute;z-index:1;height:40px;top:-7px}
+.gp_status_main span b{font-size:36px}
+
+
+.process{background-color:#d41f28;}
+.process .gp_status_main a .gp_sp{width:106px;height:48px;background-position:-239px -373px;left:-68px;top:-15px}
+.process .gp_status_main {background-position:-45px -159px}
+
+/*精品*/
+.gp_jpIcon {padding-left:18px;text-indent:2em}
+.gp_jpIcon b{position:absolute;top:-4px;left:-4px;display:block;width:74px;height:74px;background-image:url(images/pg_jingp.png);z-index:1}
+* html .gp_jpIcon b{background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='bEnabled',sizingMethod='scale',src='/hoteltuan-web/RES/groupbuy/css/images/pg_jingp.png')}
+.gp_boxShadow {width:323px;height:12px;background-position:-13px 1px; background-repeat:no-repeat;position:absolute;z-index:1;bottom:-2px;left:-1px}
+.process .gp_sp{background-position:-320px -190px}
+.process .fr .gp_sp{background-position:-243px -288px;width:95px;left:-41px;cursor:pointer}
+.gp_detail_timer{padding:7px 0 0 10px}
+.gp_detail_timer span{background:none}
+
+
+
+.clear {
+clear: both;
+display: block;
+height: 0;
+overflow: hidden;
+font-size: 0;
+}

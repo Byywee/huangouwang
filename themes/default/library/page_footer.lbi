@@ -1,0 +1,17 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--底部导航 start-->
+<!--底部导航 end-->
+<div class="blank"></div>
+<!--版权 start-->
+<div id="footer">
+<p>
+   <!-- {if $navigator_list.bottom} -->
+   <!-- {foreach name=nav_bottom_list from=$navigator_list.bottom item=nav} -->
+        <a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a>
+
+      <!-- {/foreach} -->
+  <!-- {/if} -->
+</p>
+ <div >{$copyright}</div>
+</div>
+

@@ -1,0 +1,682 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link href="themes/default/screen.min.css" rel="stylesheet" type="text/css" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,global.js,compare.js,jquery-1.7.1.min.js,prodv.min.js'}
+</head>
+<body class="w1200">
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+
+<div class="hero">
+			<div class="wrapper">
+				<div class="boverlay">
+					<a href="javascript:;" class="arrow-left"></a>
+					<a href="javascript:;" class="arrow-right"></a>
+				</div>
+				<ul>
+                <!--{foreach from=$ad_list item=ad key=key}-->
+                <!--{if $key eq 0}-->
+                <li class="poster{$key}" tabindex="-1">
+                <!--{else}-->
+                <li class="poster{$key}">
+                <!--{/if}-->
+                <a href="{$ad.url}"  title="{$ad.text}" target="_blank" style="background:#000 url({$ad.src}) no-repeat 50% 50%;"></a>
+                </li>
+                <!--{/foreach}-->
+				</ul>
+			</div>
+			<div class="container">
+				<ul class="pagi"></ul>
+			</div>
+		</div>
+<div class="blank"></div>
+<div class="block clearfix">
+
+
+    <div class="pro_tabbar f_1 clearfix">
+            <div class="h3"></div>
+            <p>
+                        <a href="#" target="_blank">刀剪砧板</a> |
+                        <a href="#" target="_blank">洁面</a> |
+                        <a href="#" target="_blank">粉底</a> |
+                        <a href="#" target="_blank">清洁物料</a> |
+                        <a href="#" target="_blank">杯子</a> |
+                        <a href="#" target="_blank">内裤</a> |
+                        <a href="#" target="_blank">枕头</a> |
+                        <a href="#" target="_blank">面膜</a> |
+                        <a href="#" target="_blank">更多</a>
+            </p>
+        </div>
+    <div class="clearfix" style="padding-top:10px;">
+       <div class="f_l pro_adpic"><a href="#"><img src="themes/default/images/jiaju_shpic.jpg"></a></div>
+       <div class="f_r pro_goods">
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       </div>
+    </div>
+
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+  <div class="adimg"><a href=""><img src="/themes/default/images/huangoumall/imgad.jpg" style="width:1200px;"/></a></div>
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+
+
+    <div class="pro_tabbar f_2 clearfix">
+            <div class="h3"></div>
+            <p>
+                        <a href="#" target="_blank">刀剪砧板</a> |
+                        <a href="#" target="_blank">洁面</a> |
+                        <a href="#" target="_blank">粉底</a> |
+                        <a href="#" target="_blank">清洁物料</a> |
+                        <a href="#" target="_blank">杯子</a> |
+                        <a href="#" target="_blank">内裤</a> |
+                        <a href="#" target="_blank">枕头</a> |
+                        <a href="#" target="_blank">面膜</a> |
+                        <a href="#" target="_blank">更多</a>
+            </p>
+        </div>
+    <div class="clearfix" style="padding-top:10px;">
+       <div class="f_l pro_adpic"><a href="#"><img src="themes/default/images/jiaju_shpic.jpg"  /></a></div>
+       <div class="f_r pro_goods">
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       </div>
+    </div>
+
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+  <div class="adimg"><a href=""><img src="/themes/default/images/huangoumall/imgad.jpg" style="width:1200px;" /></a></div>
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+
+
+    <div class="pro_tabbar f_3 clearfix">
+            <div class="h3"></div>
+            <p>
+                        <a href="#" target="_blank">刀剪砧板</a> |
+                        <a href="#" target="_blank">洁面</a> |
+                        <a href="#" target="_blank">粉底</a> |
+                        <a href="#" target="_blank">清洁物料</a> |
+                        <a href="#" target="_blank">杯子</a> |
+                        <a href="#" target="_blank">内裤</a> |
+                        <a href="#" target="_blank">枕头</a> |
+                        <a href="#" target="_blank">面膜</a> |
+                        <a href="#" target="_blank">更多</a>
+            </p>
+        </div>
+    <div class="clearfix" style="padding-top:10px;">
+       <div class="f_l pro_adpic"><a href="#"><img src="themes/default/images/jiaju_shpic.jpg"  /></a></div>
+       <div class="f_r pro_goods">
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       </div>
+    </div>
+
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+  <div class="adimg"><a href=""><img src="/themes/default/images/huangoumall/imgad.jpg" style="width:1200px;" /></a></div>
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+
+
+    <div class="pro_tabbar f_4 clearfix">
+            <div class="h3"></div>
+            <p>
+                        <a href="#" target="_blank">刀剪砧板</a> |
+                        <a href="#" target="_blank">洁面</a> |
+                        <a href="#" target="_blank">粉底</a> |
+                        <a href="#" target="_blank">清洁物料</a> |
+                        <a href="#" target="_blank">杯子</a> |
+                        <a href="#" target="_blank">内裤</a> |
+                        <a href="#" target="_blank">枕头</a> |
+                        <a href="#" target="_blank">面膜</a> |
+                        <a href="#" target="_blank">更多</a>
+            </p>
+        </div>
+    <div class="clearfix" style="padding-top:10px;">
+       <div class="f_l pro_adpic"><a href="#"><img src="themes/default/images/jiaju_shpic.jpg"  /></a></div>
+       <div class="f_r pro_goods">
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       </div>
+    </div>
+
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+  <div class="adimg"><a href=""><img src="/themes/default/images/huangoumall/imgad.jpg" style="width:1200px;" /></a></div>
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+
+
+    <div class="pro_tabbar f_5 clearfix">
+            <div class="h3"></div>
+            <p>
+                        <a href="#" target="_blank">刀剪砧板</a> |
+                        <a href="#" target="_blank">洁面</a> |
+                        <a href="#" target="_blank">粉底</a> |
+                        <a href="#" target="_blank">清洁物料</a> |
+                        <a href="#" target="_blank">杯子</a> |
+                        <a href="#" target="_blank">内裤</a> |
+                        <a href="#" target="_blank">枕头</a> |
+                        <a href="#" target="_blank">面膜</a> |
+                        <a href="#" target="_blank">更多</a>
+            </p>
+        </div>
+    <div class="clearfix" style="padding-top:10px;">
+       <div class="f_l pro_adpic"><a href="#"><img src="themes/default/images/jiaju_shpic.jpg"  /></a></div>
+       <div class="f_r pro_goods">
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       </div>
+    </div>
+
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+  <div class="adimg"><a href=""><img src="/themes/default/images/huangoumall/imgad.jpg" style="width:1200px;" /></a></div>
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+
+
+    <div class="pro_tabbar f_6 clearfix">
+            <div class="h3"></div>
+            <p>
+                        <a href="#" target="_blank">刀剪砧板</a> |
+                        <a href="#" target="_blank">洁面</a> |
+                        <a href="#" target="_blank">粉底</a> |
+                        <a href="#" target="_blank">清洁物料</a> |
+                        <a href="#" target="_blank">杯子</a> |
+                        <a href="#" target="_blank">内裤</a> |
+                        <a href="#" target="_blank">枕头</a> |
+                        <a href="#" target="_blank">面膜</a> |
+                        <a href="#" target="_blank">更多</a>
+            </p>
+        </div>
+    <div class="clearfix" style="padding-top:10px;">
+       <div class="f_l pro_adpic"><a href="#"><img src="themes/default/images/jiaju_shpic.jpg"  /></a></div>
+       <div class="f_r pro_goods">
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       </div>
+    </div>
+
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+  <div class="adimg"><a href=""><img src="/themes/default/images/huangoumall/imgad.jpg" style="width:1200px;" /></a></div>
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+
+
+    <div class="pro_tabbar f_7 clearfix">
+            <div class="h3"></div>
+            <p>
+                        <a href="#" target="_blank">刀剪砧板</a> |
+                        <a href="#" target="_blank">洁面</a> |
+                        <a href="#" target="_blank">粉底</a> |
+                        <a href="#" target="_blank">清洁物料</a> |
+                        <a href="#" target="_blank">杯子</a> |
+                        <a href="#" target="_blank">内裤</a> |
+                        <a href="#" target="_blank">枕头</a> |
+                        <a href="#" target="_blank">面膜</a> |
+                        <a href="#" target="_blank">更多</a>
+            </p>
+        </div>
+    <div class="clearfix" style="padding-top:10px;">
+       <div class="f_l pro_adpic"><a href="#"><img src="themes/default/images/jiaju_shpic.jpg"  /></a></div>
+       <div class="f_r pro_goods">
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       </div>
+    </div>
+
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+  <div class="adimg"><a href=""><img src="/themes/default/images/huangoumall/imgad.jpg" style="width:1200px;" /></a></div>
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+
+
+    <div class="pro_tabbar f_8 clearfix">
+            <div class="h3"></div>
+            <p>
+                        <a href="#" target="_blank">刀剪砧板</a> |
+                        <a href="#" target="_blank">洁面</a> |
+                        <a href="#" target="_blank">粉底</a> |
+                        <a href="#" target="_blank">清洁物料</a> |
+                        <a href="#" target="_blank">杯子</a> |
+                        <a href="#" target="_blank">内裤</a> |
+                        <a href="#" target="_blank">枕头</a> |
+                        <a href="#" target="_blank">面膜</a> |
+                        <a href="#" target="_blank">更多</a>
+            </p>
+        </div>
+    <div class="clearfix" style="padding-top:10px;">
+       <div class="f_l pro_adpic"><a href="#"><img src="themes/default/images/jiaju_shpic.jpg"  /></a></div>
+       <div class="f_r pro_goods">
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       </div>
+    </div>
+
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+  <div class="adimg"><a href=""><img src="/themes/default/images/huangoumall/imgad.jpg" style="width:1200px;" /></a></div>
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+
+
+    <div class="pro_tabbar f_9 clearfix">
+            <div class="h3"></div>
+            <p>
+                        <a href="#" target="_blank">刀剪砧板</a> |
+                        <a href="#" target="_blank">洁面</a> |
+                        <a href="#" target="_blank">粉底</a> |
+                        <a href="#" target="_blank">清洁物料</a> |
+                        <a href="#" target="_blank">杯子</a> |
+                        <a href="#" target="_blank">内裤</a> |
+                        <a href="#" target="_blank">枕头</a> |
+                        <a href="#" target="_blank">面膜</a> |
+                        <a href="#" target="_blank">更多</a>
+            </p>
+        </div>
+    <div class="clearfix" style="padding-top:10px;">
+       <div class="f_l pro_adpic"><a href="#"><img src="themes/default/images/jiaju_shpic.jpg"  /></a></div>
+       <div class="f_r pro_goods">
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       </div>
+    </div>
+
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+  <div class="adimg"><a href=""><img src="/themes/default/images/huangoumall/imgad.jpg" style="width:1200px;" /></a></div>
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+
+
+    <div class="pro_tabbar f_10 clearfix">
+            <div class="h3"></div>
+            <p>
+                        <a href="#" target="_blank">刀剪砧板</a> |
+                        <a href="#" target="_blank">洁面</a> |
+                        <a href="#" target="_blank">粉底</a> |
+                        <a href="#" target="_blank">清洁物料</a> |
+                        <a href="#" target="_blank">杯子</a> |
+                        <a href="#" target="_blank">内裤</a> |
+                        <a href="#" target="_blank">枕头</a> |
+                        <a href="#" target="_blank">面膜</a> |
+                        <a href="#" target="_blank">更多</a>
+            </p>
+        </div>
+    <div class="clearfix" style="padding-top:10px;">
+       <div class="f_l pro_adpic"><a href="#"><img src="themes/default/images/jiaju_shpic.jpg"  /></a></div>
+       <div class="f_r pro_goods">
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       
+          <div class="goodsitem3 f_l">
+            <a href="#"><img src="" class="goodsimg"/></a>
+            <p><a href="#" title="诺基亚n90">电脑麦克风话筒</a></p>
+            <p class="db-price"><span class="db-vip"><em>280</em>欢购币</span>
+            </p>
+          </div>
+       </div>
+    </div>
+
+</div>
+<div class="blank5"></div>
+<div class="block clearfix">
+  <div class="adimg"><a href=""><img src="/themes/default/images/huangoumall/imgad.jpg" style="width:1200px;" /></a></div>
+</div>
+<div class="blank5"></div>
+<div class="blank"></div>
+<div class="block clearfix">
+
+
+    <div class="pro_tabbar rm_pp clearfix">
+            <div class="h3"></div>
+            <p>
+                        <a href="#" target="_blank">更多</a>
+            </p>
+        </div>
+    <div class="clearfix" style="padding-top:10px;">
+       <div class="pop_brands">
+          <ul>
+              <li><a href="#"><img src="data/brandlogo/aaaa.gif" /></a></li>
+              <li><a href="#"><img src="data/brandlogo/aaaa.gif" /></a></li>
+              <li><a href="#"><img src="data/brandlogo/aaaa.gif" /></a></li>
+              <li><a href="#"><img src="data/brandlogo/aaaa.gif" /></a></li>
+          </ul>
+       </div>
+       
+    </div>
+
+</div>
+
+<div class="blank"></div>
+<!--帮助-->
+<div class="f_help">
+  <div class="box">
+   <div class="helpTitBg clearfix">
+    <!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+   </div>
+  </div>
+</div>
+
+<!--帮助-->
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

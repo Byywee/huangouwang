@@ -1,0 +1,476 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{insert_scripts files='jquery-1.3.2.min.js,jquery.json-1.3.js'}
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+{insert_scripts files='transport.js'}
+{insert_scripts files='utils.js,index20110925_mini.js'}
+
+<font id="ECS_MEMBERZONE"> </font>
+
+<style type="text/css">
+
+</style>
+<div class="header_bg clearfix">
+<div class="Header clearfix">
+  {* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'}
+  <div class="logo"><a href="../index.php" name="top"><img src="../images/logo.png" /></a></div>
+  <div class="mid">
+      <!--search start-->
+    <div id="search"  class="header-search">
+      
+      <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()"  style="_position:relative; top:5px;" class="search-form">
+       
+       <input name="keywords" type="text" id="keyword" value="{$search_keywords|escape}" class="search-input"/>
+       <input name="imageField" type="submit" value="" class="search-btn" style="cursor:pointer;" />
+       </form>
+       <div class="keys f_l">
+       <script type="text/javascript">
+        {literal}
+        <!--
+        function checkSearchForm()
+        {
+            if(document.getElementById('keyword').value)
+            {
+                return true;
+            }
+            else
+            {
+                alert("{$lang.no_keywords}");
+                return false;
+            }
+        }
+        -->
+        {/literal}
+        </script>
+        {if $searchkeywords}
+       {$lang.hot_search} ：
+       {foreach from=$searchkeywords item=val}
+       <a href="search.php?keywords={$val|escape:url}">{$val}</a>
+       {/foreach}
+       {/if}
+      </div>
+    </div>
+      <!--search end-->
+  </div>
+  <div class="head_r">
+      <div class="qq_jiesuan" onmouseover="this.className='qq_jiesuan_on'" onmouseout="this.className='qq_jiesuan'">
+    <a class="shop-packet" href="flow.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我的购物车</a>
+    
+<div id="snCarlist" >
+    <dl>
+        <div style="">
+            <dd>
+            <span class="p_img"><a href="#"><img width="60" height="60" src="http://image2.suning.cn/content/catentries/00000000010256/000000000102560191/000000000102560191_tn.jpg"></a></span>
+            <p class="p_name"><a href="#">创维彩电42E615L
+            <em>
+            42英寸3D网络智能LED液晶电视。易购特价，相当
+            </em>
+            </a></p>
+            <div class="p_price"><p><span><em>¥</em>3699.00</span> ×1</p>
+            <a class="mycarDel" href="javascript:void(0)" >删除</a>
+            </div>
+            </dd>
+        </div>
+    </dl>
+    <div class="miniCart" id="showProductInfo">
+    购物车中共<em id="totalProductQty">1</em>件商品　　
+    共计：<strong>¥ 3699.00</strong>
+    <a target="_blank" href="#">去结算</a>
+    </div>
+</div>
+
+    </div>
+  </div>
+</div>
+</div>
+<div class="mainNav_bg clearfix">
+ <div id="mainNav">
+    <div class="mc_head" onmouseover="this.className='mc_head_on'" onmouseout="this.className='mc_head'">
+    <div class="quanbu_fl" >全部分类<i></i></div> 
+    <div id="allsortlist">
+        
+            <div class="navlist icon01">
+                     
+		                <h3>
+		                 <a name="navh01" href="#" target="_blank">图书</a>
+
+		                 <b></b>
+		                </h3>
+		                <div class="navmore">
+		                	<div class="navmoreRight">
+			                	<div class="brand">                            
+	                            <a href="#" target="_blank">图书馆</a>
+	                            </div>
+
+		                        
+		                        <h4>促销专题</h4>
+
+		                         
+						             <p>▪
+						               
+						 			   <a name="promotion0101" href="#" target="_blank" title="步步惊心(新版) [精装]" onclick="javascript:_gaq.push(['_trackPageview','/促销/促销公告页/促销/'+'步步惊心(新版) [精装]']);">
+							 			   
+							 			   步步惊心(新版) [
+							 			   
+						 			   </a>                  
+						               
+						           </p>
+					            
+						             <p>▪
+						               
+						 			   <a name="promotion0102" href="http://www.suning.com/webapp/wcs/stores/servlet/prd_10052_22001_-7_678402_.html" target="_blank" title="遇见未知的自己" onclick="javascript:_gaq.push(['_trackPageview','/促销/促销公告页/促销/'+'遇见未知的自己']);">
+							 			   
+							 			   遇见未知的自己
+							 			   
+						 			   </a>                  
+						               
+						           </p>
+					            
+						             <p>▪
+						               
+						 			   <a name="promotion0103" href="http://www.suning.com/webapp/wcs/stores/servlet/prd_10052_22001_-7_833784_.html" target="_blank" title="海底捞，你学不会" onclick="javascript:_gaq.push(['_trackPageview','/促销/促销公告页/促销/'+'海底捞，你学不会']);">
+
+							 			   
+							 			   海底捞，你学不会
+							 			   
+						 			   </a>                  
+						               
+						           </p>
+					            
+						             <p>▪
+						               
+						 			   <a name="promotion0104" href="http://www.suning.com/webapp/wcs/stores/servlet/prd_10052_22001_-7_1085287_.html" target="_blank" title="不一样的卡梅拉(珍藏版ⅠⅡ)" onclick="javascript:_gaq.push(['_trackPageview','/促销/促销公告页/促销/'+'不一样的卡梅拉(珍藏版ⅠⅡ)']);">
+							 			   
+							 			   不一样的卡梅拉(珍藏
+							 			   
+						 			   </a>                  
+						               
+						           </p>
+					            
+						             <p>▪
+						               
+						 			   <a name="promotion0105" href="http://www.suning.com/webapp/wcs/stores/servlet/prd_10052_22001_-7_860065_.html" target="_blank" title="利比亚战地日记" onclick="javascript:_gaq.push(['_trackPageview','/促销/促销公告页/促销/'+'利比亚战地日记']);">
+							 			   
+							 			   利比亚战地日记
+							 			   
+						 			   </a>                  
+						               
+						           </p>
+
+					            
+						             <p>▪
+						               
+						 			   <a name="promotion0106" href="http://www.suning.com/webapp/wcs/stores/servlet/prd_10052_22001_-7_844936_.html" target="_blank" title="旅行,人生最有价值的投资" onclick="javascript:_gaq.push(['_trackPageview','/促销/促销公告页/促销/'+'旅行,人生最有价值的投资']);">
+							 			   
+							 			   旅行,人生最有价值的
+							 			   
+						 			   </a>                  
+						               
+						           </p>
+					            
+						             <p>▪
+						               
+						 			   <a name="promotion0107" href="http://www.suning.com/webapp/wcs/stores/servlet/prd_10052_22001_-7_1085676_.html" target="_blank" title="一只iPhone的全球之旅" onclick="javascript:_gaq.push(['_trackPageview','/促销/促销公告页/促销/'+'一只iPhone的全球之旅']);">
+							 			   
+							 			   一只iPhone的全
+							 			   
+						 			   </a>                  
+						               
+						           </p>
+					              	
+		                    </div>
+		                	
+				                	<dl> 
+				                	    
+				                    	<dt> <a name="navh0101" href="/webapp/wcs/stores/servlet/cd_10052_22001_-7_Y_226503_226504_.html" title="" target="_blank">教育</a></dt>
+
+				                    	<dd>
+				                    	    
+			    		                    <a name="navh010101" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226017_.html" title="工具书" target="_blank">工具书</a>                         
+		                                   
+			    		                    <a name="navh010102" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226086_.html" title="教育考试" target="_blank">教育考试</a>                         
+		                                   
+			    		                    <a name="navh010103" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226168_.html" title="教育综合" target="_blank">教育综合</a>                         
+		                                   
+			    		                    <a name="navh010104" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226198_.html" title="外语" target="_blank">外语</a>                         
+		                                   
+			    		                    <a name="navh010105" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226367_.html" title="中小学教辅" target="_blank">中小学教辅</a>                         
+		                                   
+			    		                    <a name="navh010106" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226461_.html" title="中小学生教材" target="_blank">中小学生教材</a>                         
+		                                   
+		                               </dd>  
+				                   </dl>
+
+			                   
+				                	<dl> 
+				                	    
+				                    	<dt> <a name="navh0102" href="/webapp/wcs/stores/servlet/cd_10052_22001_-7_Y_226503_226505_.html" title="" target="_blank">经济与管理</a></dt>
+				                    	<dd>
+				                    	    
+			    		                    <a name="navh010201" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226519_.html" title="财务会计" target="_blank">财务会计</a>                         
+		                                   
+			    		                    <a name="navh010202" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226525_.html" title="产业经济管理" target="_blank">产业经济管理</a>                         
+		                                   
+			    		                    <a name="navh010203" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226536_.html" title="个人理财" target="_blank">个人理财</a>                         
+		                                   
+			    		                    <a name="navh010204" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226541_.html" title="管理学与实务" target="_blank">管理学与实务</a>                         
+		                                   
+			    		                    <a name="navh010205" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226551_.html" title="金融" target="_blank">金融</a>                         
+		                                   
+			    		                    <a name="navh010206" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226571_.html" title="经济读物" target="_blank">经济读物</a>                         
+		                                   
+			    		                    <a name="navh010207" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226578_.html" title="经济理论" target="_blank">经济理论</a>                         
+		                                   
+			    		                    <a name="navh010208" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226583_.html" title="企业管理" target="_blank">企业管理</a>                         
+		                                   
+			    		                    <a name="navh010209" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226599_.html" title="人力资源" target="_blank">人力资源</a>                         
+		                                   
+			    		                    <a name="navh010210" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226607_.html" title="商务贸易" target="_blank">商务贸易</a>                         
+		                                   
+			    		                    <a name="navh010211" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226612_.html" title="销售/营销" target="_blank">销售/营销</a>                         
+		                                   
+		                               </dd>  
+				                   </dl>
+
+			                   
+				                	<dl> 
+				                	    
+				                    	<dt> <a name="navh0103" href="/webapp/wcs/stores/servlet/cd_10052_22001_-7_Y_226503_226506_.html" title="" target="_blank">科技</a></dt>
+				                    	<dd>
+				                    	    
+			    		                    <a name="navh010301" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226629_.html" title="大农业" target="_blank">大农业</a>                         
+		                                   
+			    		                    <a name="navh010302" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226652_.html" title="工程技术" target="_blank">工程技术</a>                         
+		                                   
+			    		                    <a name="navh010303" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226005_.html" title="计算机" target="_blank">计算机</a>                         
+		                                   
+			    		                    <a name="navh010304" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226094_.html" title="医学" target="_blank">医学</a>                         
+		                                   
+			    		                    <a name="navh010305" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226292_.html" title="自然科学" target="_blank">自然科学</a>                         
+		                                   
+		                               </dd>  
+				                   </dl>
+
+			                   
+				                	<dl> 
+				                	    
+				                    	<dt> <a name="navh0104" href="/webapp/wcs/stores/servlet/cd_10052_22001_-7_Y_226503_226507_.html" title="" target="_blank">励志与成功</a></dt>
+				                    	<dd>
+				                    	    
+			    		                    <a name="navh010401" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226315_.html" title="财富/智慧" target="_blank">财富/智慧</a>                         
+		                                   
+			    		                    <a name="navh010402" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226325_.html" title="成功" target="_blank">成功</a>                         
+		                                   
+			    		                    <a name="navh010403" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226329_.html" title="处世哲学" target="_blank">处世哲学</a>                         
+		                                   
+			    		                    <a name="navh010404" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226336_.html" title="励志" target="_blank">励志</a>                         
+		                                   
+			    		                    <a name="navh010405" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226350_.html" title="人生哲学" target="_blank">人生哲学</a>                         
+		                                   
+			    		                    <a name="navh010406" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226359_.html" title="社交/礼仪" target="_blank">社交/礼仪</a>                         
+		                                   
+			    		                    <a name="navh010407" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226365_.html" title="心灵鸡汤" target="_blank">心灵鸡汤</a>                         
+		                                   
+			    		                    <a name="navh010408" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226375_.html" title="性格与习惯" target="_blank">性格与习惯</a>                         
+		                                   
+			    		                    <a name="navh010409" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226384_.html" title="演讲与口才" target="_blank">演讲与口才</a>                         
+		                                   
+			    		                    <a name="navh010410" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226389_.html" title="职场" target="_blank">职场</a>                         
+		                                   
+			    		                    <a name="navh010411" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226399_.html" title="自我完善" target="_blank">自我完善</a>                         
+		                                   
+		                               </dd>  
+				                   </dl>
+
+			                   
+				                	<dl> 
+				                	    
+				                    	<dt> <a name="navh0105" href="/webapp/wcs/stores/servlet/cd_10052_22001_-7_Y_226503_226508_.html" title="" target="_blank">少儿</a></dt>
+				                    	<dd>
+				                    	    
+			    		                    <a name="navh010501" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226008_.html" title="幼儿读物（6岁以下）" target="_blank">幼儿读物（6岁以下）</a>                         
+		                                   
+			    		                    <a name="navh010502" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226013_.html" title="中高年级读物(6岁以上)" target="_blank">中高年级读物(6岁以上)</a>                         
+		                                   
+			    		                    <a name="navh010503" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226019_.html" title="低幼启蒙" target="_blank">低幼启蒙</a>                         
+		                                   
+			    		                    <a name="navh010504" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226038_.html" title="卡片挂图" target="_blank">卡片挂图</a>                         
+		                                   
+			    		                    <a name="navh010505" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226054_.html" title="少儿百科" target="_blank">少儿百科</a>                         
+		                                   
+			    		                    <a name="navh010506" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226061_.html" title="少儿古典" target="_blank">少儿古典</a>                         
+		                                   
+			    		                    <a name="navh010507" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226067_.html" title="少儿卡通" target="_blank">少儿卡通</a>                         
+		                                   
+			    		                    <a name="navh010508" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226095_.html" title="少儿励志" target="_blank">少儿励志</a>                         
+		                                   
+			    		                    <a name="navh010509" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226104_.html" title="少儿文学" target="_blank">少儿文学</a>                         
+		                                   
+			    		                    <a name="navh010510" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226131_.html" title="少儿艺术" target="_blank">少儿艺术</a>                         
+		                                   
+			    		                    <a name="navh010511" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226152_.html" title="少儿英语" target="_blank">少儿英语</a>                         
+		                                   
+			    		                    <a name="navh010512" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226161_.html" title="游戏益智" target="_blank">游戏益智</a>                         
+		                                   
+			    		                    <a name="navh010513" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226180_.html" title="幼儿园教师用书" target="_blank">幼儿园教师用书</a>                         
+		                                   
+		                               </dd>  
+				                   </dl>
+
+			                   
+				                	<dl> 
+				                	    
+				                    	<dt> <a name="navh0106" href="/webapp/wcs/stores/servlet/cd_10052_22001_-7_Y_226503_226509_.html" title="" target="_blank">社科</a></dt>
+				                    	<dd>
+				                    	    
+			    		                    <a name="navh010601" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226195_.html" title="法律" target="_blank">法律</a>                         
+		                                   
+			    		                    <a name="navh010602" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226242_.html" title="马列" target="_blank">马列</a>                         
+		                                   
+			    		                    <a name="navh010603" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226259_.html" title="学术文化" target="_blank">学术文化</a>                         
+		                                   
+			    		                    <a name="navh010604" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226323_.html" title="社科其他" target="_blank">社科其他</a>                         
+		                                   
+		                               </dd>  
+				                   </dl>
+
+			                   
+				                	<dl> 
+				                	    
+				                    	<dt> <a name="navh0107" href="/webapp/wcs/stores/servlet/cd_10052_22001_-7_Y_226503_226510_.html" title="" target="_blank">生活休闲</a></dt>
+				                    	<dd>
+				                    	    
+			    		                    <a name="navh010701" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226332_.html" title="宠物园艺" target="_blank">宠物园艺</a>                         
+		                                   
+			    		                    <a name="navh010702" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226343_.html" title="大众健康" target="_blank">大众健康</a>                         
+		                                   
+			    		                    <a name="navh010703" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226755_.html" title="地图" target="_blank">地图</a>                         
+		                                   
+			    		                    <a name="navh010704" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226516_.html" title="婚恋/两性" target="_blank">婚恋/两性</a>                         
+		                                   
+			    		                    <a name="navh010705" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226613_.html" title="孕产育儿" target="_blank">孕产育儿</a>                         
+		                                   
+		                               </dd>  
+				                   </dl>
+
+			                   
+				                	<dl> 
+				                	    
+				                    	<dt> <a name="navh0108" href="/webapp/wcs/stores/servlet/cd_10052_22001_-7_Y_226503_226511_.html" title="" target="_blank">文艺</a></dt>
+				                    	<dd>
+				                    	    
+			    		                    <a name="navh010801" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226770_.html" title="传记" target="_blank">传记</a>                         
+		                                   
+			    		                    <a name="navh010802" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226499_.html" title="青春文学" target="_blank">青春文学</a>                         
+		                                   
+			    		                    <a name="navh010803" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226153_.html" title="小说" target="_blank">小说</a>                         
+		                                   
+			    		                    <a name="navh010804" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226149_.html" title="文学" target="_blank">文学</a>                         
+		                                   
+			    		                    <a name="navh010805" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226158_.html" title="艺术" target="_blank">艺术</a>                         
+		                                   
+		                               </dd>  
+				                   </dl>
+
+			                   
+				                	<dl> 
+				                	    
+				                    	<dt> <a name="navh0109" href="http://www.suning.com/webapp/wcs/stores/servlet/trd_10052_22001_1_226163_.html" title="" target="_blank">综合图书</a></dt>
+				                    	<dd>
+				                    	    
+			    		                    <a name="navh010901" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226160_.html" title="音像制品" target="_blank">音像制品</a>                         
+		                                   
+			    		                    <a name="navh010902" href="/webapp/wcs/stores/servlet/trd_10052_22001_1_226163_.html" title="综合图书" target="_blank">综合图书</a>                         
+		                                   
+		                               </dd>  
+				                   </dl>
+			                               
+		                	
+              </div>
+                	
+            </div>
+
+ 		  
+            <div class="navlist icon02">
+                     
+		                <h3>
+		                 <a name="navh02" href="http://life.suning.com/epp-ppp/mo/mobile!input.action" target="_blank">充值、缴费</a>
+		                 <b></b>
+		                </h3>
+		                <div class="navmore">
+		                	<div class="navmoreRight">
+		                        <h4>推荐品牌</h4>
+
+		                          
+		                            <span>
+			                            
+		                        	</span>
+		                        <div class="clear"></div>
+
+		                        
+		                        <h4>促销专题</h4>
+		                         
+						             <p>▪
+						               
+						 			   <a name="promotion0201" href="http://www.suning.com/webapp/wcs/stores/servlet/SNPromotionView3?advertisement_id=10283&storeId=10052" target="_blank" title="志高空调十周年特惠，优惠套餐4888元" onclick="javascript:_gaq.push(['_trackPageview','/促销/促销公告页/促销/'+'志高空调十周年特惠，优惠套餐4888元']);">
+							 			   
+							 			   志高空调十周年特惠，
+							 			   
+						 			   </a>                  
+						               
+						           </p>
+
+					              	
+		                    </div>
+		                	
+				                	<dl>  
+				                    	<dt> <a name="navh0201" href="http://life.suning.com/epp-ppp/mo/mobile!input.action" title="" target="_blank">话费充值</a></dt>
+				                    	<dd>
+				                    	    
+			    		                    <a name="navh020101" href="http://life.suning.com/epp-ppp/mo/mobile!input.action" title="移动" target="_blank">移动</a>                         
+		                                   
+			    		                    <a name="navh020102" href="http://life.suning.com/epp-ppp/mo/mobile!input.action" title="电信" target="_blank">电信</a>                         
+		                                   
+			    		                    <a name="navh020103" href="http://life.suning.com/epp-ppp/mo/mobile!input.action" title="联通" target="_blank">联通</a>                         
+		                                   
+		                               </dd>  
+				                   </dl>
+
+			                   
+				                	<dl>  
+				                    	<dt> <a name="navh0202" href="http://life.suning.com/epp-ppp/ch/charge/charge!input.action" title="" target="_blank">生活缴费</a></dt>
+				                    	<dd>
+				                    	    
+			    		                    <a name="navh020201" href="http://life.suning.com/epp-ppp/ch/charge/charge!input.action" title="水费" target="_blank">水费</a>                         
+		                                   
+			    		                    <a name="navh020202" href="http://life.suning.com/epp-ppp/ch/charge/charge!input.action" title="电费" target="_blank">电费</a>                         
+		                                   
+			    		                    <a name="navh020203" href="http://life.suning.com/epp-ppp/ch/charge/charge!input.action" title="燃气费" target="_blank">燃气费</a>                         
+		                                   
+		                               </dd>  
+				                   </dl>
+			                               
+              </div>
+
+                	
+            </div>
+
+ 		  
+        </div>
+    
+  </div>
+    <ul class="mainmenu f_l">
+      
+      <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
+      <li class="mainmenu_li">
+         <a href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if} {if $nav.active eq 1} class="cur"{/if}>{$nav.name}<span></span></a>
+      </li>
+     <!-- {/foreach} -->
+
+    </ul>
+    <div class="f_r" style="position: absolute;right: 80px;top: 6px;">
+    <wb:follow-button uid="2991975565" type="red_1" width="67" height="24" ></wb:follow-button>
+    </div>
+ </div>
+</div>

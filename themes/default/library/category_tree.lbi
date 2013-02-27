@@ -1,0 +1,52 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<style type="text/css">
+.list { height:auto; margin:0px 5px 5px 5px; padding-top:10px;line-height:24px; }
+.list dt { color:#676767; }
+.list dt a { float:left; }
+.list dt span { float:right; cursor:pointer; display:block; height:11px; width:11px; line-height:0; margin-top:6px; margin-right:5px; background-image:url(http://i1.quwan.com/themes/default/imgs/catogry/newchannel_bg.gif); background-repeat:no-repeat; }
+.son { background-position:-153px -22px; }
+.soff { background-position:-164px -22px; }
+.list dd { padding-left:16px;}
+#list_on { background-position:-200px -3px; }
+.wrapa{padding: 5px;border-top: solid 2px #C43F52;border-right: solid 1px #C43F52;border-bottom: solid 1px #C43F52;border-left: solid 1px #C43F52;overflow: hidden;margin-bottom: 10px;clear: both;}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+	//列表页左侧列表弹出操作事件
+	$('.son').click( function(){
+		if($(this).hasClass('soff')){   
+			//alert('打开的');
+			$(this).removeClass("soff");
+			
+		　　 $(this).parent().parent().find('dd').hide();
+		}
+		else{
+			if(!$(this).hasClass('soff')){
+				//alert('关闭的');		
+				$(this).addClass("soff");
+				$(this).parent().parent().find('dd').show();
+			}	
+		}
+	  })
+})
+</script>
+<div class="box">
+ <div class="box_1">
+  <div id="category_tree" class="sidebar_list list">
+    <!--{foreach from=$categories item=cat}-->
+     <dl>
+     <dt><a href="{$cat.url}">{$cat.name|escape:html}</a><span class="son soff"></span><div style="clear:both;"></div></dt>
+     <!--{foreach from=$cat.cat_id item=child}-->
+     <dd><a href="{$child.url}">{$child.name|escape:html}</a></dd>
+       <!--{foreach from=$child.cat_id item=childer}-->
+       <dd>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{$childer.url}">{$childer.name|escape:html}</a></dd>
+       <!--{/foreach}-->
+     <!--{/foreach}-->
+       
+       </dl>
+    <!--{/foreach}--> 
+  </div>
+ </div>
+</div>
+<div class="blank5"></div>

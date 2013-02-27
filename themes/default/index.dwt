@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:wb=“http://open.weibo.com/wb”>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+
+<link href="themes/default/screen.min.css" rel="stylesheet" type="text/css" />
+
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,index.js,jquery-1.7.1.min.js,prodv.min.js'}
+
+<SCRIPT language=javascript> 
+<!--
+/*屏蔽所有的js错误*/
+function killerrors() { 
+return true; 
+} 
+window.onerror = killerrors; 
+//-->
+</SCRIPT>
+
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body class="w1200">
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="hero">
+			<div class="wrapper">
+				<div class="boverlay">
+					<a href="javascript:;" class="arrow-left"></a>
+					<a href="javascript:;" class="arrow-right"></a>
+				</div>
+				<ul>
+                <!--{foreach from=$ad_list item=ad key=key}-->
+                <!--{if $key eq 0}-->
+                <li class="poster{$key}" tabindex="-1">
+                <!--{else}-->
+                <li class="poster{$key}">
+                <!--{/if}-->
+                <a href="{$ad.url}"  title="{$ad.text}" target="_blank" style="background:#000 url({$ad.src}) no-repeat 50% 50%;"></a>
+                </li>
+                <!--{/foreach}-->
+				</ul>
+			</div>
+			<div class="container">
+				<ul class="pagi"></ul>
+			</div>
+		</div>
+
+
+
+
+<div class="blank5"></div>
+<div class="block clearfix">
+<style type="text/css">
+.brandMain {width: 910px;height: 432px;border-left: 1px solid #E6E6E6;border-top: 1px solid #E6E6E6;}
+.brandAd {width: 182px;float: left;}
+.brandAd a {display: block;width: 162px;border-right: 1px solid #E6E6E6;border-bottom: 1px solid #E6E6E6;position: relative;text-decoration: none;overflow: hidden;z-index: 1;padding: 10px 10px 10px 9px;-webkit-backface-visibility: hidden;color: #999;}
+.brandAd a.brandAd-b {padding-top: 251px;height: 36px;}
+.brandAd a.brandAd-s {padding-top: 103px;height: 35px;}
+.brandAd img {position: absolute;left: 23px;top: 10px;}
+.brandAd p {height: 18px;line-height: 18px;text-align: center;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.brandAd img.logo {left: 29px;top: 38px;}
+</style>
+<div class="brandMain clearfix f_l">
+		<div class="brandAd">
+			
+					<a class="brandAd-b" href="#">
+                        <img width="130" height="225" src="http://img04.taobaocdn.com/tps/i4/T1RDnWXbpXXXclNAI0-130-225.jpg">
+						<p>[Nine West/玖熙]</p>
+						<p>时尚女人魅力玖熙</p>
+						
+					</a>
+					<a class="brandAd-s" href="#" >
+                        <img class="logo" width="90" height="45" src="http://img01.taobaocdn.com/tps/T1kFDLXhFcXXb1upjX.jpg" >
+						<p>[仙蝶莉]</p>
+						<p></p>
+					</a>
+						    
+		</div>
+		<div class="brandAd">
+			
+					<a class="brandAd-s" href="#" >
+                        <img class="logo" width="90" height="45" src="http://img02.taobaocdn.com/tps/i2/T1Fg_TXd8kXXXQXDnq-90-45.png">
+						<p>[Barbie/芭比]</p>
+						<p>满139元免邮费</p>
+					</a>
+					<a class="brandAd-b" href="#" >
+                        <img width="130" height="225" src="http://img03.taobaocdn.com/tps/i3/T1vkPTXnVmXXclNAI0-130-225.jpg" >
+						<p>[Belle/百丽]</p>
+						<p>满1元免邮费</p>
+					</a>
+						    
+		</div>
+        <div class="brandAd">
+			
+					<a class="brandAd-s" href="#" >
+                        <img class="logo" width="90" height="45" src="http://img02.taobaocdn.com/tps/i2/T1Fg_TXd8kXXXQXDnq-90-45.png">
+						<p>[Barbie/芭比]</p>
+						<p>满139元免邮费</p>
+					</a>
+					<a class="brandAd-b" href="#" >
+                        <img width="130" height="225" src="http://img03.taobaocdn.com/tps/i3/T1vkPTXnVmXXclNAI0-130-225.jpg" >
+						<p>[Belle/百丽]</p>
+						<p>满1元免邮费</p>
+					</a>
+						    
+		</div>
+        <div class="brandAd">
+			
+					<a class="brandAd-b" href="#">
+                        <img width="130" height="225" src="http://img04.taobaocdn.com/tps/i4/T1RDnWXbpXXXclNAI0-130-225.jpg">
+						<p>[Nine West/玖熙]</p>
+						<p>时尚女人魅力玖熙</p>
+						
+					</a>
+					<a class="brandAd-s" href="#" >
+                        <img class="logo" width="90" height="45" src="http://img01.taobaocdn.com/tps/T1kFDLXhFcXXb1upjX.jpg" >
+						<p>[仙蝶莉]</p>
+						<p></p>
+					</a>
+						    
+		</div>
+		<div class="brandAd">
+			
+					<a class="brandAd-s" href="#" >
+                        <img class="logo" width="90" height="45" src="http://img02.taobaocdn.com/tps/i2/T1Fg_TXd8kXXXQXDnq-90-45.png">
+						<p>[Barbie/芭比]</p>
+						<p>满139元免邮费</p>
+					</a>
+					<a class="brandAd-b" href="#" >
+                        <img width="130" height="225" src="http://img03.taobaocdn.com/tps/i3/T1vkPTXnVmXXclNAI0-130-225.jpg" >
+						<p>[Belle/百丽]</p>
+						<p>满1元免邮费</p>
+					</a>
+						    
+		</div>
+	</div>
+
+
+<div class="f_r kuaib">
+   <div style="margin-bottom:12px;"><a href="#"><img src="images/huangou_zs.png"></a></div>
+   <!-- #BeginLibraryItem "/library/new_articles.lbi" --><!-- #EndLibraryItem -->
+   <style type="text/css">
+.snPrice {color: #D00;font-weight: bold!important;font-size: 24px;font-family: Arial!important;}
+.snPrice2 {color: #585657;font-weight: bold!important;font-size: 24px;font-family: Arial!important;}
+.btnMainHot ul li {position: relative;width: 278px;height: 185px;border: 1px solid #DDD;color: #666;margin-top: 10px;overflow: hidden;}
+.btnMainHot ul li a img {text-align: center;}
+.btnMainHot ul li .qingou_infof {display: block;line-height: 24px;position: absolute;right: 0px;top: 0px;}
+
+.btnMainHot ul li .timer span {float: left;text-align: center;}
+.btnMainHot ul li span b {font-size: 14px;}
+.btnMainHot ul li .timer {position: absolute;left: 0;bottom: 0;width: 100%;height: 26px;line-height: 26px;padding: 6px 0 0 8px;background: #E5E5E5;overflow: hidden;}
+.btnMainHot ul li .timer b.title {width: 75px;padding-right: 2px;color: #666;font-weight: normal;font-size: 12px;background: none;}
+.btnMainHot ul li .timer b {float: left;display: inline;width: 18px;height: 22px;line-height: 20px;text-align: center;color: #333;font-size: 14px;}
+</style>
+   <div class="btnMainHot f_l">
+
+    <ul>
+            
+        <li class="timeOn">
+            <a name="dac_index_rmtg0205" href="http://qiang.suning.com/rps-web/rp/showActivity_153613.htm" target="_blank">
+            <img  width="155" height="155" src="http://image4.suning.cn/content/catentries/00000000010134/000000000101344864/000000000101344864_ls1.jpg"></a>
+            <div class="qingou_infof">
+                <span>抢购价<br><em class="snPrice">¥309.00</em></span>
+                <dd>剩余<br><b class="snPrice2">99件</b></dd>
+                <div class="xiangou_f">限量<br><b class="snPrice2">100件</b></div>
+            </div>
+            <div class="timer" id="timer3">
+            <b class="title">距离结束时间</b>
+            <b>15</b><span>:</span><b>3</b><span>:</span><b>43</b>
+            </div>
+        
+        
+        </li>
+        
+    </ul>
+
+
+</div>
+</div>
+
+</div>
+<div class="blank5"></div>
+
+<div class="block clearfix">
+<!-- TemplateBeginEditable name="主区域" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+<div class="blank5"></div>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+
+</div>
+<div class="blank5"></div>
+
+
+<div class="block clearfix">
+
+<div class="shangpin_tj">
+        <div class="h3">商品推荐</div>
+        <p>
+                    <a href="#" target="_blank">保健食品</a> |
+                    <a href="#" target="_blank">地方特产</a> |
+                    <a href="#" target="_blank">酒水茶叶</a> |
+                    <a href="#" target="_blank">粮油调味</a> |
+                    <a href="#" target="_blank">熟食成品</a> |
+                    <a href="#" target="_blank">无糖食品</a> |
+                    <a href="#" target="_blank">休闲食品</a> |
+                    <a href="#" target="_blank">更多</a>
+        </p>
+    </div>
+
+
+<div class="clearfix shangpintj_con" style="overflow: hidden;">
+<script>
+<!--
+function setTab(name,cursel,n){
+for(i=1;i<=n;i++){
+var menu=document.getElementById(name+i);
+var con=document.getElementById("con_"+name+"_"+i);
+menu.className=i==cursel?"hover":"";
+con.style.display=i==cursel?"block":"none";}}
+//-->
+</script>
+<div class="box1 pro-top">
+<div class="h3">畅销排行榜</div>
+                  <div class="top">
+                    <ul class="floor1_1">
+                      <li id="two1" onmouseover="setTab('two',1,3)" class=""><a href="#">新品上市</a></li>
+                      <li id="two2" onmouseover="setTab('two',2,3)" class=""><a href="#">销售排行</a></li>
+                      <li id="two3" onmouseover="setTab('two',3,3)" class="hover"><a href="#">精品推荐</a></li>
+                    </ul>
+                  </div>
+                  <div class="mid">
+                    <ul id="con_two_1" class="hover f1_list" style="display: none;">
+                    <!-- TemplateBeginEditable name="新品上市" -->
+<!-- #BeginLibraryItem "/library/recommend_new.lbi" -->
+
+<!-- {if $new_goods} -->
+<!-- {if $cat_rec_sign neq 1} -->
+<div class="box">
+<div class="box_2 centerPadd">
+  
+  <div id="show_new_area" class="clearfix goodsBox">
+  <!-- {/if} -->
+  <!--{foreach from=$new_goods item=goods}-->
+  <div class="goodsItem">
+         <span class="news"></span>
+           <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" style="width:50px; height:50px;" /></a><br />
+           <p><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p>
+           <font class="f1">
+           <!-- {if $goods.promote_price neq ""} -->
+          {$goods.promote_price}
+          <!-- {else}-->
+          {$goods.shop_price}
+          <!--{/if}-->
+           </font>
+        </div>
+  <!--{/foreach}-->
+  <div class="more"><a href="../search.php?intro=new"><img src="images/more.gif" /></a></div>
+  <!-- {if $cat_rec_sign neq 1} -->
+  </div>
+</div>
+</div>
+<div class="blank5"></div>
+  <!-- {/if} -->
+<!-- {/if} -->
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+                    </ul>
+                    <ul id="con_two_2" class="hover f1_list" style="display: none;">
+                      <!-- TemplateBeginEditable name="销售排行" -->
+<!-- #BeginLibraryItem "/library/top10.lbi" -->
+
+<div class="box">
+ <div class="box_2">
+  <div class="top10Tit"></div>
+  <div class="top10List clearfix">
+  <!-- {foreach name=top_goods from=$top_goods item=goods}-->
+  <ul class="clearfix">
+	<img src="../images/top_{$smarty.foreach.top_goods.iteration}.gif" class="iteration" />
+	<!-- {if $smarty.foreach.top_goods.iteration<4}-->
+      <li class="topimg">
+      <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="samllimg" /></a>
+      </li>
+	<!-- {/if} -->		
+      <li {if $smarty.foreach.top_goods.iteration<4}class="iteration1"{/if}>
+      <a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name}</a><br />
+      {$lang.shop_price}<font class="f1">{$goods.price}</font><br />
+      </li>
+    </ul>
+  <!-- {/foreach} -->
+  </div>
+ </div>
+</div>
+<div class="blank5"></div>
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+                    </ul>
+                    <ul id="con_two_3" class="hover f1_list" style="display: block;">
+                      <!-- TemplateBeginEditable name="精品推荐" -->
+<!-- TemplateEndEditable -->
+                    </ul>
+                  </div>
+                 </div>
+
+
+<!-- #BeginLibraryItem "/library/recommend_best.lbi" -->
+
+ <!-- #EndLibraryItem -->
+ 
+</div>
+<div class="blank5"></div>
+
+<div class="shangpin_tj">
+        <div class="h3">热卖商品</div>
+        <p>
+                    <a href="#" target="_blank">保健食品</a> |
+                    <a href="#" target="_blank">地方特产</a> |
+                    <a href="#" target="_blank">酒水茶叶</a> |
+                    <a href="#" target="_blank">粮油调味</a> |
+                    <a href="#" target="_blank">熟食成品</a> |
+                    <a href="#" target="_blank">无糖食品</a> |
+                    <a href="#" target="_blank">休闲食品</a> |
+                    <a href="#" target="_blank">更多</a>
+        </p>
+    </div>
+<div class="clearfix shangpintj_con" style="overflow: hidden;">
+
+
+
+<!-- #BeginLibraryItem "/library/recommend_hot.lbi" -->
+
+ <!-- #EndLibraryItem -->
+<div class="clearfix f_r" >
+	<!-- TemplateBeginEditable name="热卖商品右侧广告（两个）" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+<div class="blank5"></div>
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+<div class="blank5"></div>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+</div>
+ 
+</div>
+
+
+    <!-- TemplateBeginEditable name="底部广告区域" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+<div class="blank5"></div>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+<div class="blank5"></div>
+</div>
+<!--帮助-->
+<div class="f_help">
+  <div class="box">
+   <div class="helpTitBg clearfix">
+    <!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+   </div>
+  </div>
+</div>
+<!--帮助-->
+<div class="blank5"></div>
+<!--友情链接 start-->
+<!--{if $img_links  or $txt_links }-->
+<div class="box block box_1">
+<h3 class="title_1"><span class="text">友情链接</span></h3>
+
+  <div class="links clearfix">
+    <!--开始图片类型的友情链接{foreach from=$img_links item=link}-->
+    <a href="{$link.url}" target="_blank" title="{$link.name}"><img src="{$link.logo}" alt="{$link.name}" border="0" /></a>
+    <!--结束图片类型的友情链接{/foreach}-->
+    <!-- {if $txt_links} -->
+    <!--开始文字类型的友情链接{foreach from=$txt_links item=link}-->
+    [<a href="{$link.url}" target="_blank" title="{$link.name}">{$link.name}</a>]
+    <!--结束文字类型的友情链接{/foreach}-->
+    <!-- {/if} -->
+  </div>
+
+</div>
+<!--{/if}-->
+<!--友情链接 end-->
+
+
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

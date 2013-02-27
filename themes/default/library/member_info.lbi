@@ -1,0 +1,50 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="g-top">
+    <div class="g-top-wrap">
+        
+        
+        {if $user_info}
+        <dl class="user-panel">
+            <dd class="login-info" id="js-login-info">{$lang.hello}，<font class="f4_b">{$user_info.username}</font>, {$lang.welcome_return}！
+            <a href="user.php" class="top-login">{$lang.user_center}</a>
+            <a href="user.php?act=logout" class="top-regiter">{$lang.user_logout}</a></dd>
+            <dd>
+                <a href="user.php?act=account_log">欢购币充值</a>
+            </dd>
+            <dd>
+                <a href="user.php?act=order_list">我的订单</a>
+            </dd>
+            <dd>
+                <a href="user.php?act=collection_list">我的收藏</a>
+            </dd>            
+            <dd>
+                <a href="article_cat.php?id=4" target="_blank">帮助中心</a>
+            </dd>
+            
+            <dd><strong>订购热线：</strong>4006-002-1308</dd>
+            
+        </dl>
+        {else}
+                   <dl class="user-panel">
+            <dd class="login-info" id="js-login-info">{$lang.welcome}&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="user.php" class="top-login">登录</a>
+            <a href="user.php?act=register" class="top-regiter">注册</a></dd>
+            <dd>
+                <a href="user.php?act=account_log">欢购币充值</a>
+            </dd>
+            <dd>
+                <a href="user.php?act=order_list">我的订单</a>
+            </dd>
+            <dd>
+                <a href="user.php?act=collection_list">我的收藏</a>
+            </dd>
+            <dd>
+                <a href="article_cat.php?id=4" target="_blank">帮助中心</a>
+            </dd>
+            
+            <dd><strong>订购热线：</strong>4006-002-1308</dd>
+            
+        </dl>
+        {/if}
+    </div>
+</div>

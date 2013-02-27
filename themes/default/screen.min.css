@@ -1,0 +1,24 @@
+DIV.hero DIV.boverlay A{top:150px;}
+DIV.boverlay A.arrow-left{left:-24px;}
+DIV.boverlay A.arrow-right{right:-24px;background-position:0 -48px;}
+DIV.banner UL LI.poster0 DIV.container SPAN.research{display:inline;float:right;width:541px;height:35px;margin:189px 7px 0 0;position:relative;background:url("../../../media/button2.png") no-repeat;}
+DIV.banner UL LI.poster0 DIV.container SPAN A{float:right;width:149px;height:35px;}
+DIV.banner UL LI.poster0 DIV.container A.research-button{display:inline;position:relative;}
+.ie6 DIV.banner DIV.wrapper UL,.ie6 DIV.banner DIV.wrapper UL LI{height:241px;}
+DIV.banner UL,DIV.hero DIV.wrapper UL{width:100%;height:100%;position:absolute;left:0;top:0;z-index:100;}
+DIV.banner UL LI,DIV.hero DIV.wrapper UL LI{display:inline;float:left;width:100%;height:100%;overflow:hidden;position:relative;}
+DIV.hero{width:100%;height:356px;position:relative;z-index:10;overflow:hidden;background:#191919;}
+DIV.hero DIV.wrapper{width:100%;height:356px;}
+.ie6 DIV.hero DIV.wrapper UL,.ie6 DIV.hero DIV.wrapper UL LI{height:356px;}
+DIV.hero DIV.wrapper DIV.container{position:relative;}
+DIV.hero DIV.wrapper UL LI H1{display:block;position:absolute;right:0;top:0;z-index:100;}
+.ie6 DIV.hero DIV.wrapper UL LI IMG{display:block;position:absolute;right:0;top:0;}
+DIV.hero DIV.wrapper UL LI A{display:block;width:100%;height:100%;position:absolute;left:0;top:0;z-index:101;text-indent:-999em;}
+DIV.hero DIV.wrapper UL LI H1 A{position:static;}UL.pagi{display:inline;float:right;margin:-63px 10px 0 0;position:relative;text-align:right;z-index:101;}UL.pagi LI{display:inline-block;float:left;width:16px;height:18px;position:relative;margin:0 8px 0 0;}UL.pagi LI A{display:inline-block;width:16px;height:18px;position:absolute;left:0;top:2px;background:url("images/mkt-pic.png") no-repeat -20px 0px;}UL.pagi LI.active A{background-position:0 0px;}
+
+.container {margin-left: auto;margin-right: auto;width: 1000px;zoom: 1;}
+div.boverlay {width: 1200px;height: 1px;margin: 0 auto;position: relative;z-index: 105;}
+div.boverlay a {top: 150px;}
+div.boverlay a {display: block;width: 48px;height: 48px;overflow: hidden;position: absolute;top: 90px;z-index: 200;z-index: 200;background: url("images/arrs.png") no-repeat;-moz-opacity: .5;-webkit-opacity: .5;opacity: .5;}
+div.boverlay a.arrow-right {right: -24px;background-position: 0 -48px;}
+div.boverlay a.arrow-left {left: -24px;}

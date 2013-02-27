@@ -1,0 +1,19 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.kuaib{width: 280px;}
+.huangou_kb{height: 141px;border: 1px solid #DDD;overflow: hidden;background:#fff;}
+.huangou_kb h2{height: 25px;line-height:25px;text-indent: 16px;font-size: 14px;color: black;font-family: "Microsoft YaHei";position: relative;background: #F1F1F1;}
+.huangou_kb h2 a{position: absolute;right: 10px;top: 0;font-size: 12px;color: #666;font-weight: normal;font-family: "SimSun";}
+.huangou_kb ul li{line-height: 22px;text-indent: 18px;}
+</style>
+<div class="huangou_kb">
+<h2>欢购快报
+<a href="#" name="dac_index_lc10720" target="_blank">更多&gt;</a></h2>
+<ul>
+<!--{foreach from=$new_articles item=article}-->
+  <li>
+	[<a href="{$article.cat_url}">{$article.cat_name}</a>] <a href="{$article.url}" title="{$article.title|escape:html}">{$article.short_title|truncate:10:"...":true}</a>
+	</li>
+<!--{/foreach}-->
+</ul>
+</div>

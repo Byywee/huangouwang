@@ -1,0 +1,108 @@
+<?php
+$data = array (
+  0 => 
+  array (
+    'cat_id' => '9',
+    'cat_name' => '欢购快报',
+    'cat_type' => '1',
+    'keywords' => '',
+    'cat_desc' => '',
+    'sort_order' => '50',
+    'show_in_nav' => '0',
+    'parent_id' => '0',
+    'has_children' => '0',
+    'aricle_num' => '4',
+  ),
+  1 => 
+  array (
+    'cat_id' => '1',
+    'cat_name' => '系统分类',
+    'cat_type' => '2',
+    'keywords' => '',
+    'cat_desc' => '系统保留分类',
+    'sort_order' => '50',
+    'show_in_nav' => '0',
+    'parent_id' => '0',
+    'has_children' => '2',
+    'aricle_num' => '0',
+  ),
+  2 => 
+  array (
+    'cat_id' => '2',
+    'cat_name' => '网店信息',
+    'cat_type' => '3',
+    'keywords' => '',
+    'cat_desc' => '网店信息分类',
+    'sort_order' => '50',
+    'show_in_nav' => '0',
+    'parent_id' => '1',
+    'has_children' => '0',
+    'aricle_num' => '5',
+  ),
+  3 => 
+  array (
+    'cat_id' => '3',
+    'cat_name' => '网店帮助分类',
+    'cat_type' => '4',
+    'keywords' => '',
+    'cat_desc' => '网店帮助分类',
+    'sort_order' => '50',
+    'show_in_nav' => '0',
+    'parent_id' => '1',
+    'has_children' => '4',
+    'aricle_num' => '0',
+  ),
+  4 => 
+  array (
+    'cat_id' => '4',
+    'cat_name' => '帮助中心',
+    'cat_type' => '5',
+    'keywords' => '',
+    'cat_desc' => '',
+    'sort_order' => '10',
+    'show_in_nav' => '0',
+    'parent_id' => '3',
+    'has_children' => '0',
+    'aricle_num' => '3',
+  ),
+  5 => 
+  array (
+    'cat_id' => '5',
+    'cat_name' => '配送方式',
+    'cat_type' => '5',
+    'keywords' => '',
+    'cat_desc' => '',
+    'sort_order' => '20',
+    'show_in_nav' => '0',
+    'parent_id' => '3',
+    'has_children' => '0',
+    'aricle_num' => '3',
+  ),
+  6 => 
+  array (
+    'cat_id' => '6',
+    'cat_name' => '退换货服务',
+    'cat_type' => '5',
+    'keywords' => '',
+    'cat_desc' => '',
+    'sort_order' => '30',
+    'show_in_nav' => '0',
+    'parent_id' => '3',
+    'has_children' => '0',
+    'aricle_num' => '2',
+  ),
+  7 => 
+  array (
+    'cat_id' => '7',
+    'cat_name' => '公司信息',
+    'cat_type' => '5',
+    'keywords' => '',
+    'cat_desc' => '',
+    'sort_order' => '40',
+    'show_in_nav' => '0',
+    'parent_id' => '3',
+    'has_children' => '0',
+    'aricle_num' => '3',
+  ),
+);
+?>
