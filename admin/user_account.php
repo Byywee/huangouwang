@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /**
  * ECSHOP 会员帐目管理(包括预付款，余额)
@@ -71,8 +71,7 @@ if ($_REQUEST['act'] == 'list')
     $smarty->assign('full_page',    1);
 
     assign_query_info();
-    $smarty->display('user_account_list_test.htm');
-    //$smarty->display('user_account_list.htm');
+    $smarty->display('user_account_list.htm');
 }
 
 /*------------------------------------------------------ */
@@ -337,8 +336,7 @@ elseif ($_REQUEST['act'] == 'action')
     /* 查询当前的预付款信息 */
     $account = array();
     $account = $db->getRow("SELECT * FROM " .$ecs->table('user_account'). " WHERE id = '$id'");
-    $amount  = $account['amount']*2;
-	
+    $amount  = $account['amount'];
 
     //如果状态为未确认
     if ($account['is_paid'] == 0)
@@ -532,7 +530,7 @@ function account_list()
         /*　时间过滤　*/
         if (!empty($filter['start_date']) && !empty($filter['end_date']))
         {
-            $where .= "AND paid_time >= " . $filter['start_date']. " AND paid_time < '" . $filter['end_date'] . "'";
+            $where .= "AND add_time >= " . $filter['start_date']. " AND add_time < '" . $filter['end_date'] . "'";
         }
 
         $sql = "SELECT COUNT(*) FROM " .$GLOBALS['ecs']->table('user_account'). " AS ua, ".

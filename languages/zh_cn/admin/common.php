@@ -239,7 +239,7 @@ $_LANG['03_users_list'] = '会员列表';
 $_LANG['04_users_add'] = '添加会员';
 $_LANG['05_user_rank_list'] = '会员等级';
 $_LANG['06_list_integrate'] = '会员整合';
-$_LANG['09_user_account'] = '充值和提现申请';
+$_LANG['09_user_account'] = '充值管理';
 $_LANG['10_user_account_manage'] = '资金管理';
 
 /* 权限管理 */

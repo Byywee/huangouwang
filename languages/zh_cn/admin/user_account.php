@@ -48,7 +48,7 @@ $_LANG['username_not_exist'] = '您输入的会员名称不存在！';
 $_LANG['cancel_surplus'] = '您确定要取消这条记录吗?';
 $_LANG['surplus_amount_error'] = '要提现的金额超过了此会员的帐户余额，此操作将不可进行！';
 $_LANG['edit_surplus_notic'] = '现在的状态已经是 已完成，如果您要修改，请先将之设置为 未确认';
-$_LANG['back_list'] = '返回充值和提现申请';
+$_LANG['back_list'] = '返回充值管理';
 $_LANG['continue_add'] = '继续添加申请';
 
 /* JS语言项 */

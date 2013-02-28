@@ -27,6 +27,7 @@ $_LANG['delete_info'] = '删除选中';
 $_LANG['category_edit'] = '编辑商品分类';
 $_LANG['move_goods'] = '转移商品';
 $_LANG['cat_top'] = '顶级分类';
+$_LANG['cat_sn'] = '分类编码';
 $_LANG['show_in_nav'] = '是否显示在导航栏';
 $_LANG['cat_style'] = '分类的样式表文件';
 $_LANG['is_show'] = '是否显示';

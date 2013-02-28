@@ -19,6 +19,13 @@
           </select>
         </td>
       </tr>
+      
+      <tr>
+        <td class="label">{$lang.cat_sn}:</td>
+        <td>
+          <input type="text" name='cat_sn' {if $cat_info.cat_sn}value='{$cat_info.cat_sn}'{else} value=""{/if} size="12" maxlength="2" />
+        </td>
+      </tr>
 
       <tr id="measure_unit">
         <td class="label">{$lang.measure_unit}:</td>

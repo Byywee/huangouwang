@@ -96,6 +96,7 @@ if ($_REQUEST['act'] == 'insert')
 
     /* 初始化变量 */
     $cat['cat_id']       = !empty($_POST['cat_id'])       ? intval($_POST['cat_id'])     : 0;
+	$cat['cat_sn']     	 = !empty($_POST['cat_sn'])       ? trim($_POST['cat_sn'])     	 : '';
     $cat['parent_id']    = !empty($_POST['parent_id'])    ? intval($_POST['parent_id'])  : 0;
     $cat['sort_order']   = !empty($_POST['sort_order'])   ? intval($_POST['sort_order']) : 0;
     $cat['keywords']     = !empty($_POST['keywords'])     ? trim($_POST['keywords'])     : '';
@@ -254,6 +255,7 @@ if ($_REQUEST['act'] == 'update')
 
     /* 初始化变量 */
     $cat_id              = !empty($_POST['cat_id'])       ? intval($_POST['cat_id'])     : 0;
+	$cat['cat_sn']     	 = !empty($_POST['cat_sn'])       ? trim($_POST['cat_sn'])     	 : '';
     $old_cat_name        = $_POST['old_cat_name'];
     $cat['parent_id']    = !empty($_POST['parent_id'])    ? intval($_POST['parent_id'])  : 0;
     $cat['sort_order']   = !empty($_POST['sort_order'])   ? intval($_POST['sort_order']) : 0;
