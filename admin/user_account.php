@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /**
  * ECSHOP 会员帐目管理(包括预付款，余额)
@@ -71,7 +71,8 @@ if ($_REQUEST['act'] == 'list')
     $smarty->assign('full_page',    1);
 
     assign_query_info();
-    $smarty->display('user_account_list.htm');
+    $smarty->display('user_account_list_test.htm');
+    //$smarty->display('user_account_list.htm');
 }
 
 /*------------------------------------------------------ */
