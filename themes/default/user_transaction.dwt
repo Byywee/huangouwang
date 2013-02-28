@@ -635,7 +635,7 @@
         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
           <tr>
             <td width="15%" bgcolor="#ffffff">{$lang.repay_money}:</td>
-            <td bgcolor="#ffffff" align="left"><input type="text" name="amount" value="{$order.amount|escape}" class="inputBg" size="30" />
+            <td bgcolor="#ffffff" align="left"><input type="text" name="amount" value="{$order.amount|escape}" class="inputBg" size="30"  /> 
             </td>
           </tr>
           <tr>
@@ -658,7 +658,9 @@
         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
             <tr>
               <td width="15%" bgcolor="#ffffff">{$lang.deposit_money}:</td>
-              <td align="left" bgcolor="#ffffff"><input type="text" name="amount"  class="inputBg" value="{$order.amount|escape}" size="30" /></td>
+              <td align="left" bgcolor="#ffffff">
+              <input type="text" name="amount"  class="inputBg" value="{$order.amount|escape}" size="21" onblur="document.getElementById('to_amount').value	=	this.value*2;" />人民币，可兑换<input type="text" id="to_amount" size="21" disabled="disabled" />欢购币
+            </td>
             </tr>
             <tr>
               <td bgcolor="#ffffff">{$lang.process_notic}:</td>
