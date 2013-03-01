@@ -67,7 +67,7 @@ if (!defined('IN_ECS'))
     $purview['10_user_account_manage'] = 'account_manage';
 	
 //欢购卡管理权限
-	$purview['01_hgcard_list']        = 'hgcard_manage';
+	$purview['01_hgcard_list']        = 'hgcard_list';
 	$purview['02_hgcard_add']         = 'hgcard_add';		
 
 //权限管理

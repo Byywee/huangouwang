@@ -64,6 +64,7 @@ $_LANG['surplus_manage'] = '会员余额管理';
 $_LANG['account_manage'] = '会员账户管理';
 
 //欢购卡管理
+$_LANG['hgcard_list'] = '欢购卡列表';
 $_LANG['hgcard_add'] = '欢购卡添加/编辑';
 
 //权限管理部分的权限
