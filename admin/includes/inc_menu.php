@@ -82,6 +82,8 @@ $modules['07_content']['02_articlecat_list']        = 'articlecat.php?act=list';
 //$modules['07_content']['shop_help']                 = 'shophelp.php?act=list_cat';
 //$modules['07_content']['shop_info']                 = 'shopinfo.php?act=list';
 
+$modules['09_others']['01_card_list']           = 'card.php?act=list';
+$modules['09_others']['02_card_add']           	= 'card.php?act=add';
 
 $modules['08_members']['03_users_list']             = 'users.php?act=list';
 $modules['08_members']['04_users_add']              = 'users.php?act=add';

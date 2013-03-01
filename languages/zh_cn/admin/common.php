@@ -136,7 +136,7 @@ $_LANG['05_banner'] = '广告管理';
 $_LANG['06_stats'] = '报表统计';
 $_LANG['07_content'] = '文章管理';
 $_LANG['08_members'] = '会员管理';
-$_LANG['09_others'] = '杂项管理';
+$_LANG['09_others'] = '欢购卡管理';
 $_LANG['10_priv_admin'] = '权限管理';
 $_LANG['11_system'] = '系统设置';
 $_LANG['12_template'] = '模板管理';
@@ -241,6 +241,10 @@ $_LANG['05_user_rank_list'] = '会员等级';
 $_LANG['06_list_integrate'] = '会员整合';
 $_LANG['09_user_account'] = '充值管理';
 $_LANG['10_user_account_manage'] = '资金管理';
+
+/* 欢购卡管理*/
+$_LANG['01_card_list'] = '欢购卡列表';
+$_LANG['02_card_add']  = '添加欢购卡';
 
 /* 权限管理 */
 $_LANG['admin_list'] = '管理员列表';
