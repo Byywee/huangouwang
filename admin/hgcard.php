@@ -155,6 +155,7 @@ function get_hgcardlist()
         }
         else
         {
+			
             $sql = "SELECT COUNT(*) FROM ".$GLOBALS['ecs']->table('hgcard');
         }
 
@@ -173,7 +174,7 @@ function get_hgcardlist()
             {
                 $keyword = $_POST['suppliers_name'];
             }
-            $sql = "SELECT * FROM ".$GLOBALS['ecs']->table('hgcard')." WHERE suppliers_name like '%{$keyword}%' ORDER BY id ASC";
+            $sql = "SELECT * FROM ".$GLOBALS['ecs']->table('hgcard')." WHERE suppliers_name like '%{$keyword}%'  ORDER BY id ASC";
         }
         else
         {

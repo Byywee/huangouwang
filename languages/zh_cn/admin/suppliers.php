@@ -25,6 +25,7 @@ $_LANG['suppliers_check'] = '状态';
 
 /* 详情页 */
 $_LANG['label_suppliers_name'] = '供货商名称：';
+$_LANG['label_suppliers_sn'] = '供货商编号：';
 $_LANG['label_suppliers_desc'] = '供货商描述：';
 $_LANG['label_admins'] = '负责该供货商的管理员：';
 $_LANG['notice_admins'] = '用星号(*)标注的管理员表示已经负责其他的供货商了';
