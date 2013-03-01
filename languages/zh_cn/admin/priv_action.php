@@ -16,6 +16,7 @@
 $_LANG['goods'] = '商品管理';
 $_LANG['cms_manage'] = '文章管理';
 $_LANG['users_manage'] = '会员管理';
+$_LANG['card_manage'] = '欢购卡管理';
 $_LANG['priv_manage'] = '权限管理';
 $_LANG['sys_manage'] = '系统设置';
 $_LANG['order_manage'] = '订单管理';
@@ -61,6 +62,9 @@ $_LANG['user_rank'] = '会员等级管理';
 $_LANG['feedback_priv'] = '会员留言管理';
 $_LANG['surplus_manage'] = '会员余额管理';
 $_LANG['account_manage'] = '会员账户管理';
+
+//欢购卡管理
+$_LANG['card_add'] = '欢购卡添加/编辑';
 
 //权限管理部分的权限
 $_LANG['admin_manage'] = '管理员添加/编辑';
