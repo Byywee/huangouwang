@@ -65,6 +65,10 @@ if (!defined('IN_ECS'))
     $purview['06_list_integrate']    = 'integrate_users';
     $purview['08_unreply_msg']       = 'feedback_priv';
     $purview['10_user_account_manage'] = 'account_manage';
+	
+//欢购卡管理权限
+	$purview['01_card_list']        = 'card_manage';
+	$purview['02_card_add']         = 'card_add';		
 
 //权限管理
     $purview['admin_logs']           = array('logs_manage', 'logs_drop');
