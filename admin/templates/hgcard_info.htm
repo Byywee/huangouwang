@@ -1,0 +1,42 @@
+<!-- $Id: brand_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,selectzone.js,colorselector.js"}
+<script type="text/javascript" src="../js/calendar.php?lang={$cfg_lang}"></script>
+<link href="../js/calendar/calendar.css" rel="stylesheet" type="text/css" />
+
+<div class="main-div">
+<form method="post" action="hgcard.php" name="theForm" >
+<table cellspacing="1" cellpadding="3" width="100%">
+  <tr>
+    <td class="label">{$lang.hgcard_amount}</td>
+    <td><input type="text" name="amount" maxlength="6" size="20" value="{$hgcard.amount}" onkeyup="value=value.replace(/[^\d]/g,'')" /></td>
+  </tr>
+  <tr>
+    <td class="label">{$lang.hgcard_money}</td>
+    <td><input type="text" name="money" maxlength="6" size="20" value="{$hgcard.money}" onkeyup="value=value.replace(/[^\d]/g,'')" /></td>
+  </tr>
+  <tr>
+    <td class="label">{$lang.hgcard_suppliers}</td>
+    <td><input type="text" name="suppliers_name" maxlength="60" size="20" value="{$hgcard.suppliers_name}" /></td>
+  </tr>
+  <tr>
+    <td class="label">{$lang.hgcard_user}</td>
+    <td><input type="text" name="user_name" maxlength="60" size="20" value="{$hgcard.user_name}" /></td>
+  </tr>
+  <tr>
+    <td class="label">{$lang.hgcard_end_time}</td>
+    <td>
+    <input name="hgcard_end_time" type="text" id="hgcard_end_time" size="12" value='{$hgcard.end_time}' readonly="readonly" /><input name="selbtn1" type="button" id="selbtn1" onclick="return showCalendar('hgcard_end_time', '%Y-%m-%d', false, false, 'selbtn1');" value="{$lang.btn_select}" class="button"/>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <input type="submit" class="button" value="{$lang.hgcard_generate}" />
+      <input type="reset" class="button" value="{$lang.button_reset}" />
+      <input type="hidden" name="act" value="{$form_action}" />
+    </td>
+  </tr>
+</table>
+</form>
+</div>
+{include file="pagefooter.htm"}

@@ -23,6 +23,7 @@ require(dirname(__FILE__) . '/includes/init.php');
 /*------------------------------------------------------ */
 if ($_REQUEST['act'] == 'list')
 {
+	admin_priv('hgcard_list');
     /* 取得过滤条件 */
     $filter = array();
     $smarty->assign('cat_select',  article_cat_list(0));
@@ -44,6 +45,70 @@ if ($_REQUEST['act'] == 'list')
     assign_query_info();
     $smarty->display('hgcard_list.htm');
 }
+
+if ($_REQUEST['act'] == 'add')
+{
+	admin_priv('hgcard_add');
+    $smarty->assign('ur_here',      $_LANG['02_hgcard_add']);
+    $smarty->assign('action_link',  array('text' => $_LANG['01_hgcard_list'], 'href' => 'hgcard.php?act=list'));
+    $smarty->assign('form_action', $_REQUEST['act'] == 'edit' ? 'update' : 'insert');
+	
+    assign_query_info();
+    $smarty->display('hgcard_info.htm');
+}
+
+if ($_REQUEST['act'] == 'insert')
+{
+	if(empty($_POST['amount']))
+	{
+		sys_msg($_LANG['hgcard_amount_null'], 1, array(), false);
+	}
+	
+	if(empty($_POST['money']))
+	{
+		sys_msg($_LANG['hgcard_money_null'], 1, array(), false);
+	}
+	
+	$_POST['suppliers_id']	=	"";
+	if(!empty($_POST['suppliers_name']))
+	{
+		$_POST['suppliers_id']	=	$GLOBALS['db']->getOne("select suppliers_id from ecs_suppliers where suppliers_name='".$_POST['suppliers_name']."'");
+		if(empty($_POST['suppliers_id']))
+		{
+			sys_msg($_LANG['hgcard_suppliers_null'], 1, array(), false);
+		}
+	}
+	
+	$_POST['user_id']	=	"";
+	if(!empty($_POST['user_name']))
+	{
+		$_POST['user_id']	=	$GLOBALS['db']->getOne("select user_id from ecs_users where user_name='".$_POST['user_name']."'");
+		if(empty($_POST['user_id']))
+		{
+			sys_msg($_LANG['hgcard_user_null'], 1, array(), false);
+		}
+	}
+	
+	if(empty($_POST['hgcard_end_time']))
+	{
+		sys_msg($_LANG['hgcard_end_time_null'], 1, array(), false);
+	}
+	else
+	{
+		$_POST['hgcard_end_time']	=	local_strtotime($_POST['hgcard_end_time']);
+	}
+	$hgcard_id	=	randomkeys_id(12);
+	$hgcard_pw	=	randomkeys_pw(12);
+	print_r($hgcard_id);print_r("<br>");
+	print_r($hgcard_pw);print_r("<br>");
+	print_r($_POST);die;
+	
+	
+        $sql = "INSERT INTO " . $ecs->table('hgcard') . " (id, card_id, password, money, suppliers_id, suppliers_name, user_id, user_name, add_time, end_time, status ) " .
+                "VALUES (NULL,'','','".$_POST['money']."','".$_POST['suppliers_id']."','".$_POST['suppliers_name']."','".$_POST['user_id']."','".$_POST['user_name']."','".$_POST['add_time']."','".$_POST['end_time']."',0)";
+        //$db->query($sql, 'SILENT');
+}
+
 
 
 /* 获得文章列表 */
@@ -106,5 +171,24 @@ function get_hgcardlist()
     return array('arr' => $arr, 'filter' => $filter, 'page_count' => $filter['page_count'], 'record_count' => $filter['record_count']);
 }
 
+/* 获取随机数 */
+function randomkeys_id($length)
+{
+	 $pattern='1234567890123456789012345678901234567890';
+	 for($i=0;$i<$length;$i++)
+	 {
+	   $key .= $pattern{mt_rand(0,35)};    //生成php随机数
+	 }
+	 return $key;
+}
+function randomkeys_pw($length)
+{
+	 $pattern='1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	 for($i=0;$i<$length;$i++)
+	 {
+	   $key .= $pattern{mt_rand(0,35)};    //生成php随机数
+	 }
+	 return $key;
+}
 
 ?>

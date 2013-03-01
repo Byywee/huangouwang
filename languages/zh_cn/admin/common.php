@@ -245,6 +245,27 @@ $_LANG['10_user_account_manage'] = '资金管理';
 /* 欢购卡管理*/
 $_LANG['01_hgcard_list'] = '欢购卡列表';
 $_LANG['02_hgcard_add']  = '添加欢购卡';
+$_LANG['hgcard_id']  = '卡号';
+$_LANG['hgcard_pw']  = '密码';
+$_LANG['hgcard_amount']  = '数量';
+$_LANG['hgcard_money']  = '金额';
+$_LANG['hgcard_suppliers']  = '所属经销商';
+$_LANG['hgcard_user']  = '所属会员';
+$_LANG['hgcard_add_time']  = '添加时间';
+$_LANG['hgcard_end_time']  = '过期时间';
+$_LANG['hgcard_status']  = '使用状态';
+$_LANG['hgcard_status_0']  = '未使用';
+$_LANG['hgcard_status_1']  = '已使用';
+$_LANG['hgcard_status_2']  = '已过期';
+$_LANG['hgcard_generate']  = '生成欢购卡';
+
+$_LANG['hgcard_amount_null']  = '数量不能为空';
+$_LANG['hgcard_money_null']  = '金额不能为空';
+$_LANG['hgcard_end_time_null']  = '过期时间不能为空';
+$_LANG['hgcard_suppliers_null']  = '所属经销商不存在';
+$_LANG['hgcard_user_null']  = '所属会员不存在';
+
+$_LANG['hgcard_generate_succeed']  = '欢购卡生成成功';
 
 /* 权限管理 */
 $_LANG['admin_list'] = '管理员列表';
