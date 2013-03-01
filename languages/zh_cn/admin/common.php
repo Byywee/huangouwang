@@ -265,6 +265,8 @@ $_LANG['hgcard_end_time_null']  = '过期时间不能为空';
 $_LANG['hgcard_suppliers_null']  = '所属经销商不存在';
 $_LANG['hgcard_user_null']  = '所属会员不存在';
 
+$_LANG['hgcard_suppliers_change']  = '经销商转换';
+
 $_LANG['hgcard_generate_succeed']  = '欢购卡生成成功';
 
 /* 权限管理 */
