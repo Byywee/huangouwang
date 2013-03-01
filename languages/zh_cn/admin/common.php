@@ -243,8 +243,8 @@ $_LANG['09_user_account'] = '充值管理';
 $_LANG['10_user_account_manage'] = '资金管理';
 
 /* 欢购卡管理*/
-$_LANG['01_card_list'] = '欢购卡列表';
-$_LANG['02_card_add']  = '添加欢购卡';
+$_LANG['01_hgcard_list'] = '欢购卡列表';
+$_LANG['02_hgcard_add']  = '添加欢购卡';
 
 /* 权限管理 */
 $_LANG['admin_list'] = '管理员列表';
