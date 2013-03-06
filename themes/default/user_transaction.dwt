@@ -626,13 +626,16 @@
         <div class="blank"></div>
          <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
           <tr>
-            <td align="right" bgcolor="#ffffff"><a href="user.php?act=account_deposit" class="f6">{$lang.surplus_type_0}</a> | <a href="user.php?act=account_raply" class="f6">{$lang.surplus_type_1}</a> | <a href="user.php?act=account_detail" class="f6">{$lang.add_surplus_log}</a> | <a href="user.php?act=account_log" class="f6">{$lang.view_application}</a> </td>
+            <td align="right" bgcolor="#ffffff"><a href="user.php?act=account_deposit" class="f6">{$lang.surplus_type_0}</a> <!--| <a href="user.php?act=account_raply" class="f6">{$lang.surplus_type_1}</a>--> | <a href="user.php?act=account_detail" class="f6">{$lang.add_surplus_log}</a> <!--| <a href="user.php?act=account_log" class="f6">{$lang.view_application}</a>--> </td>
           </tr>
         </table>
+        
         <!-- {/if} -->
         <!-- {if $action eq "account_raply"} -->
+        
         <form name="formSurplus" method="post" action="user.php" onSubmit="return submitSurplus()">
         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+          
           <tr>
             <td width="15%" bgcolor="#ffffff">{$lang.repay_money}:</td>
             <td bgcolor="#ffffff" align="left"><input type="text" name="amount" value="{$order.amount|escape}" class="inputBg" size="30"  /> 
@@ -654,8 +657,36 @@
         </form>
         <!-- {/if} -->
         <!-- {if $action eq "account_deposit"} -->
+        <form name="hgchargeForm" method="post" action="user.php">
+     		<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+     			<caption bgcolor="#ffffff"><font size="4">欢购卡充值</font></caption>
+          		<tr>
+            		<td width="15%" bgcolor="#ffffff">欢购卡卡号:</td>
+            		<td bgcolor="#ffffff" align="left"><input type="text" name="hgcard_id" value="" class="inputBg" size="30"  />
+            	</td>
+         		</tr>
+         		<tr>
+            		<td bgcolor="#ffffff">欢购卡密码:</td>
+            		<td bgcolor="#ffffff"><input type="password" name="hgcard_password" value="" class="inputBg" size="30" /></td>
+          		</tr>
+          		<tr>
+            		<td bgcolor="#ffffff">{$lang.process_notic}:</td>
+            		<td bgcolor="#ffffff" align="left" colspan="3"><textarea name="user_note" cols="55" rows="6" style="border:1px solid #ccc;"></textarea></td>
+          		</tr>
+          		<tr>
+            		<td bgcolor="#ffffff" colspan="2" align="center" colspan="4">
+                    	<input type="hidden" name="hg_type" value="2" />
+                        <input type="hidden" name="act" value="act_account" />
+              			<input type="submit" name="submit"  class="com-btn-1" value="{$lang.submit_request}" />
+              			<input type="reset" name="reset" class="com-btn-1" value="{$lang.button_reset}" />
+            		</td>
+          		</tr>
+     		</table>
+		</form>
+        
         <form name="formSurplus" method="post" action="user.php" onSubmit="return submitSurplus()">
         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+        	<caption bgcolor="#ffffff"><font size="4">支付宝充值</font></caption>
             <tr>
               <td width="15%" bgcolor="#ffffff">{$lang.deposit_money}:</td>
               <td align="left" bgcolor="#ffffff">
@@ -686,6 +717,7 @@
             <!-- {/foreach} -->
             <tr>
         <td bgcolor="#ffffff" colspan="3"  align="center">
+        <input type="hidden" name="hg_type" value="1" />
         <input type="hidden" name="surplus_type" value="0" />
           <input type="hidden" name="rec_id" value="{$order.id}" />
           <input type="hidden" name="act" value="act_account" />

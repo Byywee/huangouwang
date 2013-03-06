@@ -20,6 +20,7 @@ $_LANG['suppliers_list'] = '供货商列表';
 
 /* 列表页 */
 $_LANG['suppliers_name'] = '供货商名称';
+$_LANG['suppliers_sn'] = '供货商编号';
 $_LANG['suppliers_desc'] = '供货商描述';
 $_LANG['suppliers_check'] = '状态';
 
