@@ -365,7 +365,6 @@ elseif (in_array($_REQUEST['act'], array('insert', 'update')))
     {
         /* 提交值 */
         $suppliers = array('suppliers_name'   => trim($_POST['suppliers_name']),
-							'suppliers_sn'   => trim($_POST['suppliers_sn']),
                            'suppliers_desc'   => trim($_POST['suppliers_desc']),
                            'parent_id'        => 0
                            );
@@ -408,7 +407,6 @@ elseif (in_array($_REQUEST['act'], array('insert', 'update')))
         $suppliers = array('id'   => trim($_POST['id']));
 
         $suppliers['new'] = array('suppliers_name'   => trim($_POST['suppliers_name']),
-							'suppliers_sn'   => trim($_POST['suppliers_sn']),
                            'suppliers_desc'   => trim($_POST['suppliers_desc'])
                            );
 
@@ -500,7 +498,7 @@ function suppliers_list()
         $filter['page_count']     = $filter['record_count'] > 0 ? ceil($filter['record_count'] / $filter['page_size']) : 1;
 
         /* 查询 */
-        $sql = "SELECT suppliers_id, suppliers_name, suppliers_sn, suppliers_desc, is_check
+        $sql = "SELECT suppliers_id, suppliers_name, suppliers_desc, is_check
                 FROM " . $GLOBALS['ecs']->table("suppliers") . "
                 $where
                 ORDER BY " . $filter['sort_by'] . " " . $filter['sort_order']. "

@@ -76,9 +76,6 @@ $_LANG['back_account_log'] = '返回帐户明细列表';
 $_LANG['amount_gt_zero'] = '请在“金额”栏输入大于0的数字';
 $_LANG['select_payment_pls'] = '请选择支付方式';
 
-//会员充值欢购卡
-$_LANG['card_id_null'] = '卡号不存在';
-
 //JS语言项
 $_LANG['account_js']['surplus_amount_empty'] = '请输入您要操作的金额数量！';
 $_LANG['account_js']['surplus_amount_error'] = '您输入的金额数量格式不正确！';

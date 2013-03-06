@@ -147,16 +147,11 @@ function get_hgcardlist()
     {
         /* 分页大小 */
         $filter = array();
-		
-		$start = empty($_POST['start_time']) ? '' : local_strtotime($_POST['start_time']);
-        $end = empty($_POST['end_time']) ? '' : (local_strtotime($_POST['end_time']) + 86400);
 
         /* 记录总数以及页数 */
         if (isset($_POST['suppliers_name']))
         {
             $sql = "SELECT COUNT(*) FROM ".$GLOBALS['ecs']->table('hgcard') .' WHERE suppliers_name = \''.$_POST['suppliers_name'].'\'';
-			if($start != '' && $end != '')
-				$sql .= ' AND add_time>='.$start.' AND add_time <='.$end.'';
         }
         else
         {
@@ -179,10 +174,7 @@ function get_hgcardlist()
             {
                 $keyword = $_POST['suppliers_name'];
             }
-            $sql = "SELECT * FROM ".$GLOBALS['ecs']->table('hgcard')." WHERE suppliers_name like '%{$keyword}%' ";
-			if($start != '' && $end != '')
-				$sql .= " AND add_time>=".$start." AND add_time <=".$end." ";
-			$sql .= "ORDER BY id ASC";
+            $sql = "SELECT * FROM ".$GLOBALS['ecs']->table('hgcard')." WHERE suppliers_name like '%{$keyword}%'  ORDER BY id ASC";
         }
         else
         {

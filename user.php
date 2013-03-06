@@ -1417,148 +1417,108 @@ elseif ($action == 'act_account')
 {
     include_once(ROOT_PATH . 'includes/lib_clips.php');
     include_once(ROOT_PATH . 'includes/lib_order.php');
-	/* 变量初始化 */
-	$surplus = array(
-			'user_id'      => $user_id,
-			'rec_id'       => !empty($_POST['rec_id'])      ? intval($_POST['rec_id'])       : 0,
-			'process_type' => isset($_POST['surplus_type']) ? intval($_POST['surplus_type']) : 0,
-			'payment_id'   => isset($_POST['payment_id'])   ? intval($_POST['payment_id'])   : 0,
-			'user_note'    => isset($_POST['user_note'])    ? trim($_POST['user_note'])      : '',
-			'amount'       => $amount
-	);
-	if(!empty($_POST['hg_type']) && $_POST['hg_type']==1)
-	{
-		$amount = isset($_POST['amount']) ? floatval($_POST['amount']) : 0;
-		if ($amount <= 0)
-		{
-			show_message($_LANG['amount_gt_zero']);
-		}
-	
-	
-		/* 退款申请的处理 */
-		if ($surplus['process_type'] == 1)
-		{
-			/* 判断是否有足够的余额的进行退款的操作 */
-			$sur_amount = get_user_surplus($user_id);
-			if ($amount > $sur_amount)
-			{
-				$content = $_LANG['surplus_amount_error'];
-				show_message($content, $_LANG['back_page_up'], '', 'info');
-			}
-	
-			//插入会员账目明细
-			$amount = '-'.$amount;
-			$surplus['payment'] = '';
-			$surplus['rec_id']  = insert_user_account($surplus, $amount);
-	
-			/* 如果成功提交 */
-			if ($surplus['rec_id'] > 0)
-			{
-				$content = $_LANG['surplus_appl_submit'];
-				show_message($content, $_LANG['back_account_log'], 'user.php?act=account_log', 'info');
-			}
-			else
-			{
-				$content = $_LANG['process_false'];
-				show_message($content, $_LANG['back_page_up'], '', 'info');
-			}
-		}
-		/* 如果是会员预付款，跳转到下一步，进行线上支付的操作 */
-		else
-		{
-			if ($surplus['payment_id'] <= 0)
-			{
-				show_message($_LANG['select_payment_pls']);
-			}
-	
-			include_once(ROOT_PATH .'includes/lib_payment.php');
-	
-			//获取支付方式名称
-			$payment_info = array();
-			$payment_info = payment_info($surplus['payment_id']);
-			$surplus['payment'] = $payment_info['pay_name'];
-	
-			if ($surplus['rec_id'] > 0)
-			{
-				//更新会员账目明细
-				$surplus['rec_id'] = update_user_account($surplus);
-			}
-			else
-			{
-				//插入会员账目明细
-				$surplus['rec_id'] = insert_user_account($surplus, $amount);
-			}
-	
-			//取得支付信息，生成支付代码
-			$payment = unserialize_config($payment_info['pay_config']);
-	
-			//生成伪订单号, 不足的时候补0
-			$order = array();
-			$order['order_sn']       = $surplus['rec_id'];
-			$order['user_name']      = $_SESSION['user_name'];
-			$order['surplus_amount'] = $amount;
-	
-			//计算支付手续费用
-			$payment_info['pay_fee'] = pay_fee($surplus['payment_id'], $order['surplus_amount'], 0);
-	
-			//计算此次预付款需要支付的总金额
-			$order['order_amount']   = $amount + $payment_info['pay_fee'];
-	
-			//记录支付log
-			$order['log_id'] = insert_pay_log($surplus['rec_id'], $order['order_amount'], $type=PAY_SURPLUS, 0);
-	
-			/* 调用相应的支付方式文件 */
-			include_once(ROOT_PATH . 'includes/modules/payment/' . $payment_info['pay_code'] . '.php');
-	
-			/* 取得在线支付方式的支付按钮 */
-			$pay_obj = new $payment_info['pay_code'];
-			$payment_info['pay_button'] = $pay_obj->get_code($order, $payment);
-	
-			/* 模板赋值 */
-			$smarty->assign('payment', $payment_info);
-			$smarty->assign('pay_fee', price_format($payment_info['pay_fee'], false));
-			$smarty->assign('amount',  price_format($amount, false));
-			$smarty->assign('order',   $order);
-			$smarty->display('user_transaction.dwt');
-		}
-	}
-	else
-	{
-		
-		$sql	=	"select * from ecs_hgcard where card_id='".$_POST['hgcard_id']."'";
-		$hgcard	=	$db->getRow($sql);
-		
-		if(empty($hgcard))
-		{
-			show_message($_LANG['card_id_null'],$_LANG['back_page_up'],'user.php?act=account_deposit','warning');
-		}
-		else
-		{
-			$now = time();
-			//有效期验证
-			if($hgcard['end_time'] < $now)
-			{
-				show_message($_LANG['hgcard_over_date'],$_LANG['back_page_up'],'user.php?act=account_deposit','warning');
-			}
-			
-			//使用状态验证
-			if($hgcard['status'] != 0)
-			{
-				show_message($_LANG['hgcard_unvalidate'],$_LANG['back_page_up'],'user.php?act=account_deposit','warning');
-			}
-			
-			//密码验证
-			if($hgcard['password'] != $_POST['hgcard_password'])
-			{
-				show_message('',$_LANG['back_page_up'],'user.php?act=account_deposit','warning');
-			}
-			$surplus['payment'] = '欢购卡';
-			$surplus['amount'] = isset($hgcard['amount']) ? floatval($hgcard['amount']) : 0;
-			
-			
-		}
-		
-	}
+    $amount = isset($_POST['amount']) ? floatval($_POST['amount']) : 0;
+    if ($amount <= 0)
+    {
+        show_message($_LANG['amount_gt_zero']);
+    }
+
+    /* 变量初始化 */
+    $surplus = array(
+            'user_id'      => $user_id,
+            'rec_id'       => !empty($_POST['rec_id'])      ? intval($_POST['rec_id'])       : 0,
+            'process_type' => isset($_POST['surplus_type']) ? intval($_POST['surplus_type']) : 0,
+            'payment_id'   => isset($_POST['payment_id'])   ? intval($_POST['payment_id'])   : 0,
+            'user_note'    => isset($_POST['user_note'])    ? trim($_POST['user_note'])      : '',
+            'amount'       => $amount
+    );
+
+    /* 退款申请的处理 */
+    if ($surplus['process_type'] == 1)
+    {
+        /* 判断是否有足够的余额的进行退款的操作 */
+        $sur_amount = get_user_surplus($user_id);
+        if ($amount > $sur_amount)
+        {
+            $content = $_LANG['surplus_amount_error'];
+            show_message($content, $_LANG['back_page_up'], '', 'info');
+        }
+
+        //插入会员账目明细
+        $amount = '-'.$amount;
+        $surplus['payment'] = '';
+        $surplus['rec_id']  = insert_user_account($surplus, $amount);
+
+        /* 如果成功提交 */
+        if ($surplus['rec_id'] > 0)
+        {
+            $content = $_LANG['surplus_appl_submit'];
+            show_message($content, $_LANG['back_account_log'], 'user.php?act=account_log', 'info');
+        }
+        else
+        {
+            $content = $_LANG['process_false'];
+            show_message($content, $_LANG['back_page_up'], '', 'info');
+        }
+    }
+    /* 如果是会员预付款，跳转到下一步，进行线上支付的操作 */
+    else
+    {
+        if ($surplus['payment_id'] <= 0)
+        {
+            show_message($_LANG['select_payment_pls']);
+        }
+
+        include_once(ROOT_PATH .'includes/lib_payment.php');
+
+        //获取支付方式名称
+        $payment_info = array();
+        $payment_info = payment_info($surplus['payment_id']);
+        $surplus['payment'] = $payment_info['pay_name'];
+
+        if ($surplus['rec_id'] > 0)
+        {
+            //更新会员账目明细
+            $surplus['rec_id'] = update_user_account($surplus);
+        }
+        else
+        {
+            //插入会员账目明细
+            $surplus['rec_id'] = insert_user_account($surplus, $amount);
+        }
+
+        //取得支付信息，生成支付代码
+        $payment = unserialize_config($payment_info['pay_config']);
+
+        //生成伪订单号, 不足的时候补0
+        $order = array();
+        $order['order_sn']       = $surplus['rec_id'];
+        $order['user_name']      = $_SESSION['user_name'];
+        $order['surplus_amount'] = $amount;
+
+        //计算支付手续费用
+        $payment_info['pay_fee'] = pay_fee($surplus['payment_id'], $order['surplus_amount'], 0);
+
+        //计算此次预付款需要支付的总金额
+        $order['order_amount']   = $amount + $payment_info['pay_fee'];
+
+        //记录支付log
+        $order['log_id'] = insert_pay_log($surplus['rec_id'], $order['order_amount'], $type=PAY_SURPLUS, 0);
+
+        /* 调用相应的支付方式文件 */
+        include_once(ROOT_PATH . 'includes/modules/payment/' . $payment_info['pay_code'] . '.php');
+
+        /* 取得在线支付方式的支付按钮 */
+        $pay_obj = new $payment_info['pay_code'];
+        $payment_info['pay_button'] = $pay_obj->get_code($order, $payment);
+
+        /* 模板赋值 */
+        $smarty->assign('payment', $payment_info);
+        $smarty->assign('pay_fee', price_format($payment_info['pay_fee'], false));
+        $smarty->assign('amount',  price_format($amount, false));
+        $smarty->assign('order',   $order);
+        $smarty->display('user_transaction.dwt');
+    }
 }
 
 /* 删除会员余额 */
