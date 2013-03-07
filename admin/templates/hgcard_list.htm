@@ -3,18 +3,27 @@
 {if $full_page}
 {include file="pageheader.htm"}
 {insert_scripts files="../js/utils.js,listtable.js"}
+<script type="text/javascript" src="../js/calendar.php"></script>
+<link href="../js/calendar/calendar.css" rel="stylesheet" type="text/css" />
 <div class="form-div">
-  <form action="javascript:searchHgcard()" name="searchForm" >
+  <form action="javascript:searchHgcard()" name="searchForm" method="post">
     <img src="images/icon_search.gif" width="26" height="22" border="0" alt="SEARCH" />
     {$lang.hgcard_suppliers} <input type="text" name="suppliers_name" id="suppliers_name" />
-    <input type="submit" value="{$lang.button_search}" class="button" />
+    <input type="text" name="start_time" maxlength="60" size="20" readonly="readonly" id="start_time_id" />
+  <input name="start_time_btn" type="button" id="start_time_btn" onclick="return showCalendar('start_time_id', '%Y-%m-%d %H:%M', '24', false, 'start_time_btn');" value="{$lang.btn_select}" class="button"/>
+  ~     
+  <input type="text" name="end_time" maxlength="60" size="20" readonly="readonly" id="end_time_id" />
+  <input name="end_time_btn" type="button" id="end_time_btn" onclick="return showCalendar('end_time_id', '%Y-%m-%d %H:%M', '24', false, 'end_time_btn');" value="{$lang.btn_select}" class="button"/>  
+	<input type="submit" value="{$lang.button_search}" class="button" />
   </form>
 </div>
 <script language="JavaScript">
     function searchHgcard()
     {
         listTable.filter['suppliers_name'] = Utils.trim(document.forms['searchForm'].elements['suppliers_name'].value);
-        listTable.filter['page'] = 1;
+        listTable.filter['start_time'] = Utils.trim(document.forms['searchForm'].elements['start_time'].value);
+		listTable.filter['end_time'] = Utils.trim(document.forms['searchForm'].elements['end_time'].value);
+		listTable.filter['page'] = 1;
         
         listTable.loadList();
     }

@@ -341,6 +341,12 @@ elseif ($_REQUEST['act'] == 'main')
 //    $today_start = mktime(0,0,0,date('m'),date('d'),date('Y'));
     $order['stats']        = $db->getRow('SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount' .
     ' FROM ' .$ecs->table('order_info'));
+	
+	//is_onsale = 1 -->>'Y' 商品在售
+    //is_onsale = 0 -->> 'N' 商品已下架
+    $goods['count'] = $db->GetOne('SELECT COUNT(*) AS count FROM '.$ecs->table('goods').' WHERE is_on_sale=0');
+	$goods['is_unsale'] = 'no';
+    //这里是测试语句
 
     $smarty->assign('order', $order);
     $smarty->assign('status', $status);

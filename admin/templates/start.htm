@@ -106,6 +106,14 @@
     <td><a href="goods.php?act=list&amp;intro_type=is_promote">{$lang.sales_count}</a></td>
     <td><strong>{$goods.promote}</strong></td>
   </tr>
+    <tr>
+    <td width="20%">
+    	<!--<a href="goods.php?act=list&amp;">{$lang.goods_unsale}</a>-->
+    	<a href="goods.php?act=list&amp;is_on_sale={$goods.is_unsale}">{$lang.goods_unsale}</a>
+    	</td>
+    <td width="30%"><strong>{$goods.count}</strong></td>
+    <td width="50%" colspan="2">&nbsp;</td>
+  </tr>
 </table>
 </div>
 <br />

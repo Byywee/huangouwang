@@ -1,5 +1,21 @@
 <!-- $Id: goods_info.htm 17126 2010-04-23 10:30:26Z liuhui $ -->
 {include file="pageheader.htm"}
+<script type="text/javascript" language="JavaScript">
+	function check()
+			{
+				var sel_1 = document.theForm.suppliers_id;
+				var sel_2 = document.theForm.is_shipments;
+				if(sel_1.options[0].selected === true)
+				{
+					sel_2.options[0].selected = true;
+				}
+				else
+				{
+					sel_2.options[1].selected = true;
+				}
+			}
+			window.onload = check;
+</script>
 {insert_scripts files="../js/utils.js,selectzone.js,colorselector.js"}
 <script type="text/javascript" src="../js/calendar.php?lang={$cfg_lang}"></script>
 <link href="../js/calendar/calendar.css" rel="stylesheet" type="text/css" />
@@ -89,12 +105,21 @@
          {if $suppliers_exists eq 1}
           <tr>
             <td class="label">{$lang.label_suppliers}</td>
-            <td><select name="suppliers_id" id="suppliers_id">
-        <option value="0">{$lang.suppliers_no}</option>
+            <td><select name="suppliers_id" id="suppliers_id" onchange="check();">
+        <option value="0" selected="true">{$lang.suppliers_no}</option>
         {html_options options=$suppliers_list_name selected=$goods.suppliers_id}
       </select></td>
           </tr>
          {/if}
+         <tr>
+          	<td class="label">是否发货：</td>
+          	<td>
+          		<select name="is_shipments" id="is_shipments">
+          			<option value="0" {if $goods.is_shipments eq 0} selected="selected"{/if}>否</option>
+          			<option value="1" {if $goods.is_shipments eq 1} selected="selected"{/if}>是</option>
+          		</select>
+          	</td>
+          </tr>
           <tr>
             <td class="label">{$lang.lab_shop_price}</td>
             <td><input type="text" name="shop_price" value="{$goods.shop_price}" size="20" onblur="priceSetted()"/>
@@ -442,6 +467,7 @@
   var sz1 = new SelectZone(1, elements['source_select1'], elements['target_select1']);
   var sz2 = new SelectZone(2, elements['source_select2'], elements['target_select2'], elements['price2']);
   var sz3 = new SelectZone(1, elements['source_select3'], elements['target_select3']);
+ // var shipment_status = document.forms['theForm'].elements['goods_shipments_status'];
   var marketPriceRate = {$cfg.market_price_rate|default:1};
   var integralPercent = {$cfg.integral_percent|default:0};
 

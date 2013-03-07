@@ -18,7 +18,7 @@
 <link href="themes/default/screen.min.css" rel="stylesheet" type="text/css" />
 
 {* 包含脚本文件 *}
-{insert_scripts files='common.js,index.js,jquery-1.7.1.min.js,prodv.min.js'}
+{insert_scripts files='common.js,index.js,jquery-1.7.1.min.js,prodv.min.js,leftTime_aj.js'}
 
 <SCRIPT language=javascript> 
 <!--
@@ -158,7 +158,7 @@ window.onerror = killerrors;
 .snPrice2 {color: #585657;font-weight: bold!important;font-size: 24px;font-family: Arial!important;}
 .btnMainHot ul li {position: relative;width: 278px;height: 185px;border: 1px solid #DDD;color: #666;margin-top: 10px;overflow: hidden;}
 .btnMainHot ul li a img {text-align: center;}
-.btnMainHot ul li .qingou_infof {display: block;line-height: 24px;position: absolute;right: 0px;top: 0px;}
+.btnMainHot ul li .qingou_infof {display: block;line-height: 24px;position: absolute;right: 0px;top: 0px;width:120px;}
 
 .btnMainHot ul li .timer span {float: left;text-align: center;}
 .btnMainHot ul li span b {font-size: 14px;}
@@ -171,19 +171,23 @@ window.onerror = killerrors;
     <ul>
             
         <li class="timeOn">
-            <a name="dac_index_rmtg0205" href="http://qiang.suning.com/rps-web/rp/showActivity_153613.htm" target="_blank">
-            <img  width="155" height="155" src="http://image4.suning.cn/content/catentries/00000000010134/000000000101344864/000000000101344864_ls1.jpg"></a>
+            <a name="dac_index_rmtg0205"  title="{$good_info.goods_name}" href="goods.php?id={$good_info.goods_id}" target="_blank">
+            <!--<img width="155" height="155" src="http://image4.suning.cn/content/catentries/00000000010134/000000000101344864/000000000101344864_ls1.jpg">-->	
+			<img width="155" height="155" src="{$good_info.goods_img}" alt="{$good_info.goods_name}">
+			</a>
             <div class="qingou_infof">
-                <span>抢购价<br><em class="snPrice">¥309.00</em></span>
-                <dd>剩余<br><b class="snPrice2">99件</b></dd>
-                <div class="xiangou_f">限量<br><b class="snPrice2">100件</b></div>
+				<span>{$good_info.act_name}</span>
+                <span>抢购价<br><em class="snPrice">￥{$good_info.shop_price}</em></span>
+                <dd>剩余<br><b class="snPrice2">{$good_info.goods_number}件</b></dd>
+                <!--<div class="xiangou_f">限量<br><b class="snPrice2">100件</b></div>-->
             </div>
             <div class="timer" id="timer3">
             <b class="title">距离结束时间</b>
-            <b>15</b><span>:</span><b>3</b><span>:</span><b>43</b>
-            </div>
-        
-        
+            <span id="leftTime">
+            
+            </span>
+            <input type="hidden" id="show_time" value="{$good_info.end_time}" />
+            </div>        
         </li>
         
     </ul>

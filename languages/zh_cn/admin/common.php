@@ -13,8 +13,8 @@
  * $Id: common.php 17119 2010-04-21 07:58:09Z liuhui $
 */
 
-$_LANG['app_name'] = 'BYYWEE';
-$_LANG['cp_home'] = 'BYYWEE 管理中心';
+$_LANG['app_name'] = 'FAD';
+$_LANG['cp_home'] = 'FAD 管理中心';
 $_LANG['copyright'] = '版权所有 &copy; 2005-2012 上海百微信息科技有限公司，并保留所有权利。';
 $_LANG['query_info'] = '共执行 %d 个查询，用时 %s 秒';
 $_LANG['memory_info'] = '，内存占用 %0.3f MB';

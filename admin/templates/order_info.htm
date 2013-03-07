@@ -178,10 +178,11 @@
 <div class="list-div" style="margin-bottom: 5px">
 <table width="100%" cellpadding="3" cellspacing="1">
   <tr>
-    <th colspan="8" scope="col">{$lang.goods_info}<a href="order.php?act=edit&order_id={$order.order_id}&step=goods" class="special">{$lang.edit}</a></th>
+    <th colspan="10" scope="col">{$lang.goods_info}<a href="order.php?act=edit&order_id={$order.order_id}&step=goods" class="special">{$lang.edit}</a></th>
     </tr>
   <tr>
     <td scope="col"><div align="center"><strong>{$lang.goods_name_brand}</strong></div></td>
+    <td scope="col"><div align="center"><strong>{$lang.is_shipments}</strong></div></td>
     <td scope="col"><div align="center"><strong>{$lang.goods_sn}</strong></div></td>
     <td scope="col"><div align="center"><strong>{$lang.product_sn}</strong></div></td>
     <td scope="col"><div align="center"><strong>{$lang.goods_price}</strong></div></td>
@@ -206,6 +207,17 @@
     </div>
     {/if}
     </td>
+    <td>
+    <div align="center">
+    	<strong>
+    {if $goods.is_shipments eq 1}
+    	{$lang.is_shipments_yes}
+    {else}
+    	{$lang.is_shipments_no}
+    {/if}
+    	</strong>
+    </div>
+    </td>
     <td>{$goods.goods_sn}</td>
     <td>{$goods.product_sn}</td>
     <td><div align="right">{$goods.formated_goods_price}</div></td>
@@ -220,6 +232,7 @@
     <td></td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
+    <td></td>
     <td>{if $order.total_weight}<div align="right"><strong>{$lang.label_total_weight}
     </strong></div>{/if}</td>
     <td>{if $order.total_weight}<div align="right">{$order.total_weight}
