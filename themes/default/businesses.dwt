@@ -34,6 +34,7 @@ div.gp_choicePane{width:978px;border:1px solid #ddd;background:#fff;padding-top:
 #gp_quyu div p a{margin:0 5px;padding:0 5px;margin-bottom:4px;*margin-bottom:0;}
 .clear {clear: both;display: block;height: 0;overflow: hidden;font-size: 0;}
 .p10 {padding: 10px;}
+
 </style>
 </head>
 <body>
@@ -85,185 +86,43 @@ div.gp_choicePane{width:978px;border:1px solid #ddd;background:#fff;padding-top:
             <div class="clear"></div>	
          </div>
   <div class="clearfix">
-    <h3 class="ui-title">
-       <em class="ui-title-num">01</em>
-       <a target="_blank" href="#" class="ui-title-con brandFloor-hd2">
-						<b class="ui-title-text">
-							  上海
-						</b>
-		</a>
-    </h3>
-    <div class="clearfix">
-       <div class="dp-left">
-               <p class="ware_pic">
-                  <a href="#"><img src=""  style="display: inline-block;"></a>
-               </p>
-                <div class="f_l" style="padding-top:10px;">
-                   <h2>
-                      <a href="#" style=" font-size:14px">时尚联盟</a>
-                   </h2>
-                   <p style="font-size:11px;">西区200-1号</p>
-                   <p><strong>店主：</strong>admin</p>
-                </div>
+    
+
+       <div class="famousbus">
+         <a href="#"><img src="images/dianp1.jpg" width="305" /></a>
+         <div class="famousbus_txt">
+            <div class="famousbus_name">渝乡人家</div>
+            <a href="#" class="f_r"><img src="images/to_see.jpg" /></a>
+            <div class="clear"></div>
+         </div>
        </div>
-       <div class="dp-left">
-               <p class="ware_pic">
-                  <a href="#"><img src=""  style="display: inline-block;"></a>
-               </p>
-                <div class="f_l" style="padding-top:10px;">
-                   <h2>
-                      <a href="#" style=" font-size:14px">时尚联盟</a>
-                   </h2>
-                   <p style="font-size:11px;">西区200-1号</p>
-                   <p><strong>店主：</strong>admin</p>
-                </div>
+       <div class="famousbus">
+         <a href="#"><img src="images/dianp1.jpg" width="305" /></a>
+         <div class="famousbus_txt">
+            <div class="famousbus_name">渝乡人家</div>
+            <a href="#" class="f_r"><img src="images/to_see.jpg" /></a>
+            <div class="clear"></div>
+         </div>
        </div>
-       <div class="dp-left">
-               <p class="ware_pic">
-                  <a href="#"><img src=""  style="display: inline-block;"></a>
-               </p>
-                <div class="f_l" style="padding-top:10px;">
-                   <h2>
-                      <a href="#" style=" font-size:14px">时尚联盟</a>
-                   </h2>
-                   <p style="font-size:11px;">西区200-1号</p>
-                   <p><strong>店主：</strong>admin</p>
-                </div>
+       <div class="famousbus">
+         <a href="#"><img src="images/dianp1.jpg" width="305" /></a>
+         <div class="famousbus_txt">
+            <div class="famousbus_name">渝乡人家</div>
+            <a href="#" class="f_r"><img src="images/to_see.jpg" /></a>
+            <div class="clear"></div>
+         </div>
        </div>
-       <div class="dp-left">
-               <p class="ware_pic">
-                  <a href="#"><img src=""  style="display: inline-block;"></a>
-               </p>
-                <div class="f_l" style="padding-top:10px;">
-                   <h2>
-                      <a href="#" style=" font-size:14px">时尚联盟</a>
-                   </h2>
-                   <p style="font-size:11px;">西区200-1号</p>
-                   <p><strong>店主：</strong>admin</p>
-                </div>
+       <div class="famousbus">
+         <a href="#"><img src="images/dianp1.jpg" width="305" /></a>
+         <div class="famousbus_txt">
+            <div class="famousbus_name">渝乡人家</div>
+            <a href="#" class="f_r"><img src="images/to_see.jpg" /></a>
+            <div class="clear"></div>
+         </div>
        </div>
-    </div>  
+
   </div>
-  <div class="clearfix">
-    <h3 class="ui-title">
-       <em class="ui-title-num">02</em>
-       <a target="_blank" href="#" class="ui-title-con brandFloor-hd2">
-						<b class="ui-title-text">
-							  苏州
-						</b>
-		</a>
-    </h3>
-    <div class="clearfix">
-       <div class="dp-left">
-               <p class="ware_pic">
-                  <a href="#"><img src=""  style="display: inline-block;"></a>
-               </p>
-                <div class="f_l" style="padding-top:10px;">
-                   <h2>
-                      <a href="#" style=" font-size:14px">时尚联盟</a>
-                   </h2>
-                   <p style="font-size:11px;">西区200-1号</p>
-                   <p><strong>店主：</strong>admin</p>
-                </div>
-       </div>
-       <div class="dp-left">
-               <p class="ware_pic">
-                  <a href="#"><img src=""  style="display: inline-block;"></a>
-               </p>
-                <div class="f_l" style="padding-top:10px;">
-                   <h2>
-                      <a href="#" style=" font-size:14px">时尚联盟</a>
-                   </h2>
-                   <p style="font-size:11px;">西区200-1号</p>
-                   <p><strong>店主：</strong>admin</p>
-                </div>
-       </div>
-       <div class="dp-left">
-               <p class="ware_pic">
-                  <a href="#"><img src=""  style="display: inline-block;"></a>
-               </p>
-                <div class="f_l" style="padding-top:10px;">
-                   <h2>
-                      <a href="#" style=" font-size:14px">时尚联盟</a>
-                   </h2>
-                   <p style="font-size:11px;">西区200-1号</p>
-                   <p><strong>店主：</strong>admin</p>
-                </div>
-       </div>
-       <div class="dp-left">
-               <p class="ware_pic">
-                  <a href="#"><img src=""  style="display: inline-block;"></a>
-               </p>
-                <div class="f_l" style="padding-top:10px;">
-                   <h2>
-                      <a href="#" style=" font-size:14px">时尚联盟</a>
-                   </h2>
-                   <p style="font-size:11px;">西区200-1号</p>
-                   <p><strong>店主：</strong>admin</p>
-                </div>
-       </div>
-    </div>  
-  </div>
-  <div class="clearfix">
-    <h3 class="ui-title">
-       <em class="ui-title-num">03</em>
-       <a target="_blank" href="#" class="ui-title-con brandFloor-hd2">
-						<b class="ui-title-text">
-							  杭州
-						</b>
-		</a>
-    </h3>
-    <div class="clearfix">
-       <div class="dp-left">
-               <p class="ware_pic">
-                  <a href="#"><img src=""  style="display: inline-block;"></a>
-               </p>
-                <div class="f_l" style="padding-top:10px;">
-                   <h2>
-                      <a href="#" style=" font-size:14px">时尚联盟</a>
-                   </h2>
-                   <p style="font-size:11px;">西区200-1号</p>
-                   <p><strong>店主：</strong>admin</p>
-                </div>
-       </div>
-       <div class="dp-left">
-               <p class="ware_pic">
-                  <a href="#"><img src=""  style="display: inline-block;"></a>
-               </p>
-                <div class="f_l" style="padding-top:10px;">
-                   <h2>
-                      <a href="#" style=" font-size:14px">时尚联盟</a>
-                   </h2>
-                   <p style="font-size:11px;">西区200-1号</p>
-                   <p><strong>店主：</strong>admin</p>
-                </div>
-       </div>
-       <div class="dp-left">
-               <p class="ware_pic">
-                  <a href="#"><img src=""  style="display: inline-block;"></a>
-               </p>
-                <div class="f_l" style="padding-top:10px;">
-                   <h2>
-                      <a href="#" style=" font-size:14px">时尚联盟</a>
-                   </h2>
-                   <p style="font-size:11px;">西区200-1号</p>
-                   <p><strong>店主：</strong>admin</p>
-                </div>
-       </div>
-       <div class="dp-left">
-               <p class="ware_pic">
-                  <a href="#"><img src=""  style="display: inline-block;"></a>
-               </p>
-                <div class="f_l" style="padding-top:10px;">
-                   <h2>
-                      <a href="#" style=" font-size:14px">时尚联盟</a>
-                   </h2>
-                   <p style="font-size:11px;">西区200-1号</p>
-                   <p><strong>店主：</strong>admin</p>
-                </div>
-       </div>
-    </div>  
-  </div>
+
 
 
 

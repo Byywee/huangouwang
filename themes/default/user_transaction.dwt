@@ -330,13 +330,16 @@
          <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
           <tr>
             <th width="23%" align="center" bgcolor="#ffffff">{$lang.goods_name}</th>
-            <th width="29%" align="center" bgcolor="#ffffff">{$lang.goods_attr}</th>
+            <th width="13%" align="center" bgcolor="#ffffff">{$lang.goods_attr}</th>
             <!--<th>{$lang.market_price}</th>-->
-            <th width="26%" align="center" bgcolor="#ffffff">{$lang.goods_price}<!-- {if $order.extension_code eq "group_buy"} -->{$lang.gb_deposit}<!-- {/if} --></th>
+            <th width="20%" align="center" bgcolor="#ffffff">{$lang.goods_price}<!-- {if $order.extension_code eq "group_buy"} -->{$lang.gb_deposit}<!-- {/if} --></th>
             <th width="9%" align="center" bgcolor="#ffffff">{$lang.number}</th>
-            <th width="20%" align="center" bgcolor="#ffffff">{$lang.subtotal}</th>
+			{if $order.order_logic_value eq 'yes' && $order.order_goods_num gt 1 }
+            <th width="22%" align="center" bgcolor="#ffffff">{$lang.operation}</th>
+			{/if}
+			<th width="20%" align="center" bgcolor="#ffffff">{$lang.subtotal}</th>
           </tr>
-          <!-- {foreach from=$goods_list item=goods} -->
+          <!-- {foreach from=$goods_list item=goods } -->
           <tr>
             <td bgcolor="#ffffff">
               <!-- {if $goods.goods_id gt 0 && $goods.extension_code neq 'package_buy'} 商品 -->
@@ -359,7 +362,48 @@
             <!--<td align="right">{$goods.market_price}</td>-->
             <td align="right" bgcolor="#ffffff">{$goods.goods_price}</td>
             <td align="center" bgcolor="#ffffff">{$goods.goods_number}</td>
-            <td align="right" bgcolor="#ffffff">{$goods.subtotal}</td>
+			{if $order.order_logic_value eq 'yes' && $order.order_goods_num gt 1}
+            <td align="center" bgcolor="#ffffff">
+				<script type="text/javascript" language="JavaScript">
+					function check()
+					{
+						var srn = document.getElementById('sales_return_num').value;
+						if(parseInt(srn) > {$goods.goods_number}-{$goods.back_sales_num})
+						{
+							alert('{$lang.check_erro_1}');
+							document.getElementById('sales_return_num').value	=	0;
+							return false;
+						}
+						if(srn == '' || parseInt(srn)<=0)
+						{
+							alert('{$lang.data_erro}');
+							return false; 
+						}
+						return true;
+					}
+				</script>
+				{if $goods.back_sales_num lt $goods.goods_number && $goods.sale_return_able eq 1 && $goods.sale_return_timeout eq 'no_timeout'}
+				<form action="user.php?act=sales_return" name="srnForm{$goods.goods_id}" method="POST" onsubmit="return check()">
+				<input type="hidden" name="user_id" value="{$order.user_id}" />
+				<input type="hidden" name="order_id" value="{$order.order_id}" />
+				<input type="hidden" name="order_status_confirm" value="{$order.order_status}"/>
+				<input type="hidden" name="order_status_pay" value="{$order.pay_status}"/>
+				<input type="hidden" name="order_status_shipment" value="{$order.shipping_status}"/>
+				<input type="hidden" name="goods_cur_price" value="{$goods.goods_price}" />
+				<input type="hidden" name="goods_id" value="{$goods.goods_id}" />
+				<input type="hidden" name="goods_name" value="{$goods.goods_name}" />
+				<input type="text" name="sales_return_num" id="sales_return_num" maxlength="2" size="2" value="0"/>
+				<input type="submit" value="提交" {if $goods.goods_number eq 0 }disabled {/if}/>
+				</form>
+				<font color="red">[<big>{$goods.back_sales_num}</big>]件退货中......</font>
+				{elseif $goods.back_sales_num eq $goods.goods_number }
+				<font color="red">					
+				     	[<big>{$goods.back_sales_num}</big>件]退货中......
+				</font>
+				{/if}
+			</td>
+			{/if}
+			<td align="right" bgcolor="#ffffff">{$goods.subtotal}</td>
           </tr>
           <!-- {/foreach} -->
           <tr>
@@ -626,13 +670,16 @@
         <div class="blank"></div>
          <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
           <tr>
-            <td align="right" bgcolor="#ffffff"><a href="user.php?act=account_deposit" class="f6">{$lang.surplus_type_0}</a> | <a href="user.php?act=account_raply" class="f6">{$lang.surplus_type_1}</a> | <a href="user.php?act=account_detail" class="f6">{$lang.add_surplus_log}</a> | <a href="user.php?act=account_log" class="f6">{$lang.view_application}</a> </td>
+            <td align="right" bgcolor="#ffffff"><a href="user.php?act=account_deposit" class="f6">{$lang.surplus_type_0}</a> <!--| <a href="user.php?act=account_raply" class="f6">{$lang.surplus_type_1}</a>--> | <a href="user.php?act=account_detail" class="f6">{$lang.add_surplus_log}</a> <!--| <a href="user.php?act=account_log" class="f6">{$lang.view_application}</a>--> </td>
           </tr>
         </table>
+        
         <!-- {/if} -->
         <!-- {if $action eq "account_raply"} -->
+        
         <form name="formSurplus" method="post" action="user.php" onSubmit="return submitSurplus()">
         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+          
           <tr>
             <td width="15%" bgcolor="#ffffff">{$lang.repay_money}:</td>
             <td bgcolor="#ffffff" align="left"><input type="text" name="amount" value="{$order.amount|escape}" class="inputBg" size="30"  /> 
@@ -654,8 +701,50 @@
         </form>
         <!-- {/if} -->
         <!-- {if $action eq "account_deposit"} -->
-        <form name="formSurplus" method="post" action="user.php" onSubmit="return submitSurplus()">
+        <script type="text/javascript" language="javascript">
+			function check_pwd()
+			{
+				var password = document.getElementById("hgcard_password");
+				if(password.value == '')
+				{
+					alert('{$lang.password_null}');
+					return false;
+				}
+				return true;
+			}
+		</script>
+        <form name="hgchargeForm" method="post" action="user.php?act=act_account" onsubmit="return check_pwd();">
+     		<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+     			<caption bgcolor="#ffffff"><font size="4">{$lang.hgcharge}</font></caption>
+          		<tr>
+            		<td width="15%" bgcolor="#ffffff">{$lang.hgcard_id}</td>
+            		<td bgcolor="#ffffff" align="left"><input type="text" name="hgcard_id" value="" class="inputBg" size="30"  />
+            	</td>
+         		</tr>
+         		<tr>
+            		<td bgcolor="#ffffff">{$lang.hgcard_pwd}</td>
+            		<td bgcolor="#ffffff"><input type="password" name="hgcard_password" id= "hgcard_password" value="" class="inputBg" size="30" /></td>
+          		</tr>
+                <tr>
+                	<input type="hidden" name="user_id" value="{$order.user_id}" />
+                </tr>
+          		<tr>
+            		<td bgcolor="#ffffff">{$lang.process_notic}:</td>
+            		<td bgcolor="#ffffff" align="left" colspan="3"><textarea name="user_note" cols="55" rows="6" style="border:1px solid #ccc;"></textarea></td>
+          		</tr>
+          		<tr>
+            		<td bgcolor="#ffffff" colspan="2" align="center" colspan="4">
+                    	<input type="hidden" name="hg_type" value="2" />
+                        <input type="hidden" name="act" value="act_account" />
+              			<input type="submit" name="submit"  class="com-btn-1" value="{$lang.submit_request}" />
+              			<input type="reset" name="reset" class="com-btn-1" value="{$lang.button_reset}" />
+            		</td>
+          		</tr>
+     		</table>
+		</form>
+        <form name="formSurplus" method="post" action="user.php?act=act_account" onSubmit="return submitSurplus()">
         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+        	<caption bgcolor="#ffffff"><font size="4">支付宝充值</font></caption>
             <tr>
               <td width="15%" bgcolor="#ffffff">{$lang.deposit_money}:</td>
               <td align="left" bgcolor="#ffffff">
@@ -686,6 +775,7 @@
             <!-- {/foreach} -->
             <tr>
         <td bgcolor="#ffffff" colspan="3"  align="center">
+        <input type="hidden" name="hg_type" value="1" />
         <input type="hidden" name="surplus_type" value="0" />
           <input type="hidden" name="rec_id" value="{$order.id}" />
           <input type="hidden" name="act" value="act_account" />

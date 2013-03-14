@@ -14,13 +14,13 @@ Template Type: type_0
      公共样式
 ==================== */
 body{background:#fff; font-size:12px; font-family: tahoma,verdana,arial,helvetica,sans-serif; line-height:150%; margin:0; padding:0; color:#404040;}
-div{margin:0 auto; padding:0;}
+div{padding:0;}
 a{text-decoration: none;color: #333;}
 h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,form,img,p{
 margin:0; padding:0; border:none; list-style-type:none;}
 em, i {font-style: normal;}
 
-.block{width:1000px;height:auto;}
+.block{width:1000px;height:auto;margin: 0 auto;}
 .f_l{float:left;}
 .f_r{float:right;}
 .tl{ text-align:left;}
@@ -313,7 +313,7 @@ cursor: pointer;
    .f_help{background:#321912;border-top: 3px solid #e8380f;font-size: 14px;font-family: Microsoft Yahei,Arial;border-bottom: 1px solid #918E8E;}
    .f_help .box{background: #321912;height:126px;}
 
-   .helpTitBg{text-align:center;width: 960px;background:url(images/rexian_dh.jpg) right  center no-repeat;padding:8px 0px;}
+   .helpTitBg{text-align:center;width: 960px;background:url(images/rexian_dh.jpg) right  center no-repeat;padding:8px 0px;margin:0 auto;}
    .helpTitBg dl{float:left; margin: auto;_width:130px;padding:0 45px;border-right:dashed 1px  #fff;}
    .helpTitBg dt{width:auto; height:33px; line-height:33px; text-align:left;
    font-weight:bold; color:#E75607; margin-bottom:2px;text-align:center;}
@@ -348,8 +348,8 @@ cursor: pointer;
    #goodsInfo .imgInfo{width:302px; float:left; margin-right:10px; overflow:hidden;}
    #goodsInfo .imgInfo .imgpic{border: 1px solid #DDD;display: block;}
    #goodsInfo .imgInfo .thumb{width:300px; height:300px; display:block;}/*商品详情图片*/
-   #goodsInfo span{width:4px; height:48px; background:url(images/bg.gif) no-repeat 0 -527px; float:left;}
-   #goodsInfo span.spanR{width:4px; height:48px; background:url(images/bg.gif) no-repeat -5px -527px; float:right;}
+   #goodsInfo .imgInfo .clearfix span{width:17px; height:54px; background:url(images/z_y.png) no-repeat 0 0px; float:left;}
+   #goodsInfo .imgInfo .clearfix span.spanR{width:17px; height:54px; background:url(images/z_y.png) no-repeat -17px 0px; float:right;}
    #goodsInfo .gallery{width:204px; float:left; margin-left:10px; _margin-left:5px; overflow:hidden;}
    #goodsInfo .gallery ul{width:auto;}
    #goodsInfo .gallery li{float:left; width:48px; margin:0 2px;}
@@ -358,9 +358,9 @@ cursor: pointer;
    #goodsInfo .textInfo{background:#fff; width:773px; float:left; padding:10px;}
    #goodsInfo .textInfo p{font-size:20px;padding:0 5px 5px 8px;font-family: Arial,Verdana,"microsoft yahei";}
    #goodsInfo .textInfo ul{border-top:1px solid #ccc;}
-   #goodsInfo .textInfo li{background:url(images/lineBg.gif) repeat-x left bottom; padding:0px 8px; _height:1%;}
+   #goodsInfo .textInfo li{ padding:0px 8px; _height:1%;}
    #goodsInfo .textInfo li.padd{padding:7px 0px 7px 8px;}
-   #goodsInfo .textInfo li dd{width:50%; float:left; padding:7px 0px;}
+   #goodsInfo .textInfo li dd{float:left; padding:7px 0px;}
    #goodsInfo .textInfo li dd.ddR{border-left:1px solid #eeecec; width:48%; padding-left:8px;}
      #goodsInfo .textInfo li dd.ddL{border-right:1px solid #eeecec;}
    #goodsInfo .textInfo a{color:#006bce; text-decoration:underline;}
@@ -600,7 +600,7 @@ padding: 0 9px;
 }
 
 .header_bg{width:100%;background:#e8380d;/*border-top: solid #F4A500 3px;border-bottom: solid #F4A500 2px;*/}
-.Header{ height:93px; width:1000px; position: relative;/*background:url(images/head_navbg.png) no-repeat center;*/} 
+.Header{margin:0 auto; height:93px; width:1000px; position: relative;/*background:url(images/head_navbg.png) no-repeat center;*/} 
 .Header a{color: white;}
 .Header .logo{margin:auto 0px;position:absolute;left:30px;top:10px;}
 .Header .mid { background:url(images/topBgMid.gif);position: absolute;top: 40px;left:274px;}

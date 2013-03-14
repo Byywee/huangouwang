@@ -75,6 +75,10 @@ $_LANG['back_page_up'] = '返回上一页';
 $_LANG['back_account_log'] = '返回帐户明细列表';
 $_LANG['amount_gt_zero'] = '请在“金额”栏输入大于0的数字';
 $_LANG['select_payment_pls'] = '请选择支付方式';
+$_LANG['password_null'] = '密码不能为空啊啊！！！';
+$_LANG['hgcharge'] = '欢购卡充值';
+$_LANG['hgcard_id'] = '欢购帐号:';
+$_LANG['hgcard_pwd'] = '欢购密码:';
 
 //JS语言项
 $_LANG['account_js']['surplus_amount_empty'] = '请输入您要操作的金额数量！';
@@ -134,6 +138,12 @@ $_LANG['edit_email_failed'] = '编辑电子邮件地址失败！';
 $_LANG['edit_profile_success'] = '您的个人资料已经成功修改！';
 $_LANG['edit_profile_failed'] = '修改个人资料操作失败！';
 $_LANG['oldpassword_error'] = '您输入的旧密码有误!请确认再后输入！';
+
+//欢购卡充值反馈信息
+$_LANG['hgcard_password_error'] = '您输入的密码有误，请核实！';
+$_LANG['hgcard_over_date'] = 'I am so sorry,您的欢购卡已过期！';
+$_LANG['hgcard_unvalidate'] = '抱歉啦，您的欢购卡已经用过了，不能再用啦！';
+$_LANG['card_id_null'] = '您输入的卡号为空，请核实，谢谢！';
 
 //JS语言项
 $_LANG['profile_js']['bonus_sn_empty'] = '请输入您要添加的红包号码！';
@@ -329,6 +339,10 @@ $_LANG['to_order_sn'] = '第二个订单号：';
 $_LANG['merge'] = '合并';
 $_LANG['notice_order_sn'] = '当两个订单不一致时，合并后的订单信息（如：支付方式、配送方式、包装、贺卡、红包等）以第二个为准。';
 $_LANG['subtotal'] = '小计';
+$_LANG['operation'] = '退货操作';
+$_LANG['sale_return_ing'] = '退货中......';
+$_LANG['check_erro_1'] = '退货数量不能大于订货数量';
+$_LANG['data_erro'] = '数据非法，请核实，谢谢！';
 $_LANG['goods_price'] = '商品价格';
 $_LANG['goods_attr'] = '属性';
 $_LANG['use_balance'] = '使用余额';
@@ -419,6 +433,8 @@ $_LANG['username_invalid'] = '用户名 %s 含有敏感字符';
 $_LANG['username_exist'] = '用户名 %s 已经存在';
 $_LANG['username_not_allow'] = '用户名 %s 不允许注册';
 $_LANG['confirm_register'] = '确认注册';
+$_LANG['data_error_1'] = '数据非法,请核实!';
+$_LANG['sr_operate'] = '退货操作成功';
 
 $_LANG['agreement'] = "我已看过并接受《<a href=\"article.php?cat_id=-1\" style=\"color:blue\" target=\"_blank\">用户协议</a>》";
 

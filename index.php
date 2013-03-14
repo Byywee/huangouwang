@@ -130,6 +130,7 @@ if (!$smarty->is_cached('index.dwt', $cache_id))
     $smarty->assign('group_buy_goods', index_get_group_buy());      // 团购商品
     $smarty->assign('auction_list',    index_get_auction());        // 拍卖活动
     $smarty->assign('shop_notice',     $_CFG['shop_notice']);       // 商店公告
+	$smarty->assign('good_info',index_get_buy());//获取商品信息（商品活动和商品）
 
     /* 首页主广告设置 */
     $smarty->assign('index_ad',     $_CFG['index_ad']);
@@ -388,5 +389,20 @@ function get_flash_xml()
     return $flashdb;
 }
 
+function index_get_buy()
+{
+	$sql = "select fa.* ,g.* ";
+	$sql .= "from ".$GLOBALS['ecs']->table('favourable_activity')." as fa,";
+	$sql .= $GLOBALS['ecs']->table('goods')." as g ";
+	$sql .= " where fa.act_range_ext=g.goods_id ";
+	
+	$goods = $GLOBALS['db']->getAll($sql);
+	foreach($goods as $goods_info_all)
+	{
+		$goods_info[] = $goods_info_all;
+	}
+	$goods_info['shop_price'] = $goods_info['shop_price'] * $goods_info['act_type_ext'];
+    return $good_info=$goods_info[0];
+}
 
 ?>

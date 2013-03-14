@@ -62,8 +62,8 @@
           <!-- {if $info.credit_line gt 0} 如果有信用额度 -->
           {$lang.credit_line}:{$info.formated_credit_line}<br />
           <!-- {/if} -->
-          {$lang.your_bonus}:<a href="user.php?act=bonus" style="color:#006bd0;">{$info.bonus}</a><br />
-          {$lang.your_integral}:{$info.integral}<br />
+          <!--{$lang.your_bonus}:<a href="user.php?act=bonus" style="color:#006bd0;">{$info.bonus}</a><br />-->
+          <!--{$lang.your_integral}:{$info.integral}<br />-->
           </div>
           <div class="f_r" style="width:350px;">
           <h5><span>{$lang.your_notice}</span></h5>

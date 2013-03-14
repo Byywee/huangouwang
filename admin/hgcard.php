@@ -132,8 +132,19 @@ if ($_REQUEST['act'] == 'insert')
 }
 
 
-
-
+if ($_REQUEST['act'] == 'hgcard_info')
+{
+	$sql = "select * from ".$ecs->table('hgcard')." where id=".$_REQUEST['id']."";
+	$hgcard_info = $db->getRow($sql);
+	$hgcard_info['add_time'] = $hgcard_info['use_time']==0 ? 'NULL' :date('Y-m-d',$hgcard_info['add_time']);
+	$hgcard_info['end_time'] = $hgcard_info['end_time']==0 ? 'NULL' : date('Y-m-d',$hgcard_info['end_time']);
+	$hgcard_info['use_time'] = $hgcard_info['use_time']==0 ? 'NULL' : date('Y-m-d',$hgcard_info['use_time']);
+	
+	$smarty->assign('ur_here',$_LANG['hgcard_detail_info']);
+	$smarty->assign('action_link',  array('text' => $_LANG['01_hgcard_list'], 'href' => 'hgcard.php?act=list'));
+	$smarty->assign('hgcard_info',$hgcard_info);
+	$smarty->display('hgcard_info_detail.htm');
+}
 /**
  * 获取品牌列表
  *
@@ -201,6 +212,7 @@ function get_hgcardlist()
     $arr = array();
     while ($rows = $GLOBALS['db']->fetchRow($res))
     {
+		$rows['use_time']	=	date('Y-m-d',$rows['add_time']);
 		$rows['add_time']	=	date('Y-m-d',$rows['add_time']);
 		$rows['end_times']	=	date('Y-m-d',$rows['end_time']);
         $arr[] = $rows;

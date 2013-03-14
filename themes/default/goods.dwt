@@ -37,6 +37,72 @@ function reg(str){
 }
 
 </script>
+
+<style type="text/css">
+#choose{ float:left;border:1px solid #EDD28B;background:#fffcf5;margin-bottom:20px;}
+#choose:hover {border: 1px solid #DF9A07;border-radius: 1px 1px 1px 1px;box-shadow: 0 0 1px #FF6600; background:#fffdee;}
+
+
+#choose .dt{float:left;width:72px;text-align:right;}
+#choose .dd{float:left;width:376px;}
+#choose li{overflow:hidden;border-bottom:1px dotted #f3e6c6;zoom:1;}
+.product-intro-noitem #choose li { border-color:#ddd; }
+#choose-noresult { padding-left:10px; }
+#choose a{display:block;white-space:nowrap;text-decoration:none;}
+#choose #choose-btns{border-bottom:none;}
+#choose .dt{width:71px;}
+#choose .dd{border-top:4px solid #FFFDEE;border-bottom:4px solid #FFFDEE;overflow:hidden;}
+.product-intro-noitem #choose .dd { border-color:#f5f5f5; }
+#choose .item{float:left;margin:2px 8px 2px 0;}
+#choose .item img{float:left;}
+#choose .item a:link,
+#choose .item a:visited{border:1px solid #ccc;padding:1px;}
+#choose .item a:hover,
+#choose .item a:active,
+#choose .selected a:link,
+#choose .selected a:visited{border:2px solid #CC0000;padding:0;}
+#choose .selected,
+#choose .disabled{position:relative;zoom:1; }
+#choose .disabled i { display:none; }
+
+#choose #choose-color .disabled a { border:1px dashed #ccc; padding:1px; }
+#choose #choose-version .disabled a { border:1px dashed #ccc; padding:4px; }
+#choose #choose-version .disabled a,#choose #choose-version .disabled a:visited { color:#999; }
+
+#choose .selected b{position:absolute;bottom:0;right:0;width:12px;height:12px;overflow:hidden; background-position:-202px -224px; }
+#choose-color .dt{margin-top:24px;}
+#choose-color .dd a{float:left;}
+#choose-version .dt{margin-top:14px;}
+#choose-version .item a:link,
+#choose-version .item a:visited{float:left;padding:4px 6px;background:#fff;}
+#choose-version .item a:hover,
+#choose-version .item a:active,
+#choose-version .selected a:link,
+#choose-version .selected a:visited {padding:3px 5px;}
+#choose-type .dt { margin-top:15px; }
+#choose-type .item a:link,
+#choose-type .item a:visited{float:left;padding:4px 6px;background:#fff;}
+#choose-type .item a:hover,
+#choose-type .item a:active,
+#choose-type .selected a:link,
+#choose-type .selected a:visited {padding:3px 5px;}
+#choose-amount{padding:4px 0;}
+#choose-amount .dt,
+#choose-result .dt{line-height:28px;}
+#choose-amount .wrap-input{position:relative;width:36px;padding:0 18px;}
+#choose-amount .wrap-input a{position:absolute;top:3px;width:15px;height:15px;overflow:hidden;line-height:50px;}
+#choose-amount .btn-reduce{left:0; background-position:-216px -190px; }
+#choose-amount .btn-add{right:0; background-position:-232px -190px; }
+#choose-amount .btn-reduce:hover{background-position:-216px -206px; }
+#choose-amount .btn-add:hover{background-position:-232px -206px; }
+
+#choose-amount .text{width:30px;height:16px;border:1px solid #ccc;padding:2px;text-align:center;}
+#choose #choose-result{padding:6px 0 0 10px;color:#CC0000;border-bottom:none;}
+#choose #choose-result .dt { width:auto; }
+#choose .choose-noresult strong { padding-left:1em; }
+.product-intro-noitem #choose #choose-result{color:#333;}
+
+</style>
 </head>
 <body class="w1200">
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
@@ -67,10 +133,26 @@ function reg(str){
      <!--相册 START-->
      <!-- #BeginLibraryItem "/library/goods_gallery.lbi" --><!-- #EndLibraryItem -->
      <!--相册 END-->
-         <div class="blank5"></div>
+     <div class="blank5 clearfix"></div>
+         <div style="float:left;line-height: 24px;padding: 4px;border: 1px solid #DDD;margin: 10px 0;">
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_renren"></a>
+	<a class="jiathis_button_kaixin001"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1349627914679239" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+     </div>
+     <div class="blank5"></div>
          <!-- TemplateBeginEditable name="商品相册下广告（宽230px）" -->
 <!-- TemplateEndEditable -->
      </div>
+     
      <!--商品图片和相册 end-->
      <div class="textInfo">
      <form action="javascript:addToCart({$goods.goods_id})" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY" >
@@ -101,57 +183,42 @@ function reg(str){
        <strong>{$lang.goods_sn}</strong>{$goods.goods_sn}
        <!-- {/if} -->
        </dd>
-       <dd class="ddR">
-       <!-- {if $goods.goods_number neq "" and $cfg.show_goodsnumber} 商品库存-->
-        <!-- {if $goods.goods_number eq 0} -->
-          <strong>{$lang.goods_number}</strong>
-          <font color='red'>{$lang.stock_up}</font>
-        <!-- {else} -->
-          <strong>{$lang.goods_number}</strong>
-          {$goods.goods_number} {$goods.measure_unit}
-        <!-- {/if} -->
-      <!-- {/if} -->
-       </dd>
+       
       </li>
       <li class="clearfix">
        <dd>
+           <!--本店售价-->
+           <strong>{$lang.shop_price}</strong><font class="shop" id="ECS_SHOPPRICE">{$goods.shop_price_formated}</font><br />
+           <!-- {foreach from=$rank_prices item=rank_price key=key} 会员等级对应的价格-->
+           <strong>{$rank_price.rank_name}：</strong><font class="shop" id="ECS_RANKPRICE_{$key}">{$rank_price.price}</font><br />
+           <!--{/foreach}-->
+       </dd>
+
+      </li>
+      <li class="clearfix">
+         <dd>
+           <!-- {if $cfg.show_goodsweight} 商品重量-->
+           <strong>{$lang.goods_weight}</strong>{$goods.goods_weight}
+           <!-- {/if} -->
+         </dd>
+      </li>
+      <li class="clearfix">
+         <dd>
+          <strong>{$lang.goods_rank}</strong>
+          <img src="images/stars{$goods.comment_rank}.gif" alt="comment rank {$goods.comment_rank}" />
+         </dd> 
+      </li>
+      <li class="clearfix">
+       
        <!-- {if $goods.goods_brand neq "" and $cfg.show_brand} 显示商品品牌-->
-       <strong>{$lang.goods_brand}</strong><a href="{$goods.goods_brand_url}" >{$goods.goods_brand}</a>
-       <!--{/if}-->
-       </dd>
-       <dd class="ddR">
-       <!-- {if $cfg.show_goodsweight} 商品重量-->
-       <strong>{$lang.goods_weight}</strong>{$goods.goods_weight}
-       <!-- {/if} -->
-       </dd>
-      </li>
-      <li class="clearfix">
        <dd>
-       <!-- {if $cfg.show_addtime} 上架时间-->
-      <strong>{$lang.add_time}</strong>{$goods.add_time}
-      <!-- {/if} -->
-       </dd>
-       <dd class="ddR">
-       <!--点击数-->
-       <strong>{$lang.goods_click_count}：</strong>{$goods.click_count}
-       </dd>
+       <strong>{$lang.goods_brand}</strong><a href="{$goods.goods_brand_url}" >{$goods.goods_brand}</a>
+       </dd><!--{/if}-->
+       
+       
       </li>
-      <li class="clearfix">
-       <dd class="ddL">
-       <!-- {if $cfg.show_marketprice} 市场价格-->
-       <strong>{$lang.market_price}</strong><font class="market">{$goods.market_price}</font><br />
-       <!-- {/if} -->
-       <!--本店售价-->
-       <strong>{$lang.shop_price}</strong><font class="shop" id="ECS_SHOPPRICE">{$goods.shop_price_formated}</font><br />
-       <!-- {foreach from=$rank_prices item=rank_price key=key} 会员等级对应的价格-->
-       <strong>{$rank_price.rank_name}：</strong><font class="shop" id="ECS_RANKPRICE_{$key}">{$rank_price.price}</font><br />
-       <!--{/foreach}-->
-       </dd>
-       <dd style="width:48%; padding-left:7px;">
-       <strong>{$lang.goods_rank}</strong>
-      <img src="images/stars{$goods.comment_rank}.gif" alt="comment rank {$goods.comment_rank}" />
-       </dd>
-      </li>
+      
+      
 
       <!--{if $volume_price_list } -->
       <li class="padd">
@@ -242,10 +309,42 @@ function reg(str){
       </li>
       <!-- {/foreach} -->
       <!-- {* 结束循环可选属性 *} -->
-      <li class="padd">
-      <a href="javascript:addToCart({$goods.goods_id})"><img src="images/bnt_cat.gif" /></a>
-      <a href="javascript:collect({$goods.goods_id})"><img src="images/bnt_colles.gif" /></a>
-      </li>
+      
+      
+      <ul id="choose">
+				<li id="choose-color">
+                   <div class="dt">选择颜色：</div>
+                   <div class="dd">
+                      <div class="item selected"><b></b><a href="#none" title="黄棕色"><img data-img="1" src="http://img11.360buyimg.com/n5/g7/M03/08/13/rBEHZlB2ehUIAAAAAANiTmeq75kAABrmQH1ItsAA2Jm820.jpg" width="50" height="50" alt="黄棕色 "></a></div>
+                      <div class="item"><b></b><a href="#none" title="黑色"><img data-img="1" src="http://img12.360buyimg.com/n5/g7/M03/08/13/rBEHZlB2ebwIAAAAAAKrlbWJ3WQAABrmANHZAwAAqut595.jpg" width="50" height="50" alt="黑色 "></a></div>
+                      <div class="item"><b></b><a href="#none" title="红色"><img data-img="1" src="http://img13.360buyimg.com/n5/g7/M03/08/13/rBEHZVB2enkIAAAAAAOhsJt2R7MAABrmgGEFCMAA6HI982.jpg" width="50" height="50" alt="红色 "></a></div>
+                      <div class="item"><b></b><a href="#none" title="蓝色"><img data-img="1" src="http://img13.360buyimg.com/n5/g7/M03/08/13/rBEHZlB2esQIAAAAAALYE71rElkAABrmwEd7kYAAtgr000.jpg" width="50" height="50" alt="蓝色 "></a></div>
+                      <div class="item"><b></b><a href="#none" title="浅绿色"><img data-img="1" src="http://img13.360buyimg.com/n5/g7/M03/08/13/rBEHZlB2e1MIAAAAAALOn5fqI_cAABrnAJGoIYAAs63317.jpg" width="50" height="50" alt="浅绿色 "></a></div>
+                   </div>
+                </li>
+                <li id="choose-version">
+                   <div class="dt">选择尺码：</div>
+                   <div class="dd">
+                     <div class="item"><b></b><a href="#none" title="39" style="cursor: pointer;">39</a></div>
+                     <div class="item"><b></b><a href="#none" title="40" style="cursor: pointer;">40</a></div>
+                     <div class="item selected"><b></b><a href="#none" title="41" style="cursor: pointer;">41</a></div>
+                     <div class="item"><b></b><a href="#none" title="42" style="cursor: pointer;">42</a></div>
+                     <div class="item"><b></b><a href="#none" title="43" style="cursor: pointer;">43</a></div></div>
+                </li>
+				<li id="choose-amount">
+					<div class="dt">{$lang.number}：</div>
+                    <div class="dt"><input name="number" type="text" id="number" value="1" size="4" onblur="changePrice()" style="border:1px solid #ccc; "/></div>
+				</li>
+		        <li id="choose-result" style="display: list-item;">
+                    <div class="dt"></div><div class="dd"><em>已选择</em><strong>“黄棕色”</strong>，<strong>“41”</strong></div>
+                </li>
+				<li id="choose-btns" class="padd">
+       <dd><a href="javascript:addToCart({$goods.goods_id})"><img src="images/bnt_cat.gif" /></a></dd>
+      <dd><a href="javascript:collect({$goods.goods_id})"><img src="images/bnt_colles.gif" /></a></dd>
+				</li>
+			</ul>
+      
+      
       </ul>
       </form>
      </div>

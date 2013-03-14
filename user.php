@@ -22,7 +22,7 @@ require_once(ROOT_PATH . 'languages/' .$_CFG['lang']. '/user.php');
 
 $user_id = $_SESSION['user_id'];
 $action  = isset($_REQUEST['act']) ? trim($_REQUEST['act']) : 'default';
-
+//print_r($action);
 $affiliate = unserialize($GLOBALS['_CFG']['affiliate']);
 $smarty->assign('affiliate', $affiliate);
 $back_act='';
@@ -30,12 +30,12 @@ $back_act='';
 
 // 不需要登录的操作或自己验证是否登录（如ajax处理）的act
 $not_login_arr =
-array('login','act_login','register','act_register','act_edit_password','get_password','send_pwd_email','password', 'signin', 'add_tag', 'collect', 'return_to_cart', 'logout', 'email_list', 'validate_email', 'send_hash_mail', 'order_query', 'is_registered', 'check_email','clear_history','qpassword_name', 'get_passwd_question', 'check_answer');
+array('login','act_login','register','act_register','act_edit_password','get_password','send_pwd_email','password', 'signin', 'add_tag', 'collect', 'return_to_cart', 'logout', 'email_list', 'validate_email', 'send_hash_mail', 'order_query', 'is_registered', 'check_email','clear_history','qpassword_name', 'get_passwd_question', 'check_answer', 'sales_return');
 
 /* 显示页面的action列表 */
 $ui_arr = array('register', 'login', 'profile', 'order_list', 'order_detail', 'address_list', 'collection_list',
 'message_list', 'tag_list', 'get_password', 'reset_password', 'booking_list', 'add_booking', 'account_raply',
-'account_deposit', 'account_log', 'account_detail', 'act_account', 'pay', 'default', 'bonus', 'group_buy', 'group_buy_detail', 'affiliate', 'comment_list','validate_email','track_packages', 'transform_points','qpassword_name', 'get_passwd_question', 'check_answer');
+'account_deposit', 'account_log', 'account_detail', 'act_account', 'pay', 'default', 'bonus', 'group_buy', 'group_buy_detail', 'affiliate', 'comment_list','validate_email','track_packages', 'transform_points','qpassword_name', 'get_passwd_question', 'check_answer', 'sales_return');
 
 /* 未登录处理 */
 if (empty($_SESSION['user_id']))
@@ -845,8 +845,9 @@ elseif ($action == 'order_detail')
         $goods_list[$key]['market_price'] = price_format($value['market_price'], false);
         $goods_list[$key]['goods_price']  = price_format($value['goods_price'], false);
         $goods_list[$key]['subtotal']     = price_format($value['subtotal'], false);
+		$goods_list[$key]['goods_id']     = $value['goods_id'];
     }
-
+	
      /* 设置能否修改使用余额数 */
     if ($order['order_amount'] > 0)
     {
@@ -884,7 +885,59 @@ elseif ($action == 'order_detail')
     $order['order_status'] = $_LANG['os'][$order['order_status']];
     $order['pay_status'] = $_LANG['ps'][$order['pay_status']];
     $order['shipping_status'] = $_LANG['ss'][$order['shipping_status']];
-
+	
+	/*订单状态的逻辑值*/
+	if(($order['order_status'] == '未确认' && $order['shipping_status'] == '未发货') || ($order['order_status'] == '已确认' && $order['shipping_status'] == '收货确认'))
+	{
+		$order['order_logic_value'] = 'yes';
+	}
+	else 
+	{
+		$order['order_logic_value'] = 'no';
+	}
+	
+	foreach($goods_list AS $key=>$val)
+	{
+		$sql  = " select is_sale_return,back_sales_num from ".$ecs->table('order_goods');
+		$sql .= " where order_id='".$_GET['order_id']."' AND goods_id='".$goods_list[$key]['goods_id']."' ";
+		$goodslist = $db->getRow($sql);
+		$goods_list[$key]['is_sale_return']	=	$goodslist['is_sale_return'];
+		$goods_list[$key]['back_sales_num']	=	$goodslist['back_sales_num'];
+		//back_sale_num -->退货数量
+		$goods_list[$key]['back_sales_num']	=	$goodslist['back_sales_num'];		
+	}
+	
+	
+	foreach($goods_list AS $key=>$val)
+	{
+		$sql  = " select add_time+sale_return_able_date as end_time,sale_return_able"; 
+        $sql .= " from ".$ecs->table('order_goods')." eo,".$ecs->table('goods')." eg ";
+		$sql .= " where eo.goods_id = eg.goods_id and eo.order_id = ".$goods_list[$key]['goods_id'];
+		$sql .= " and eo.order_id = ".$_GET['order_id']."";
+		$info = $db->getRow($sql);
+		if(time() - $info['end_time'] <= 0)
+		{
+			$goods_list[$key]['sale_return_timeout'] = 'timeout';
+		}
+		else
+		{
+			$goods_list[$key]['sale_return_timeout'] = 'no_timeout';
+		}
+		$goods_list[$key]['sale_return_able'] = $info['sale_return_able'];
+		
+	}
+	
+	
+	//获取订单商品表中的  订单商品数量order_goods_num，
+	$sql = " select sum(goods_number) order_goods_num from ".$ecs->table('order_goods');
+	$sql .= " where order_id=".$_GET['order_id']."";
+	$order['order_goods_num'] = $db->getOne($sql);
+	
+	//print_r($order);
+	//print("<br />");
+	//print_r($goods_list);
+	//die;
+	
     $smarty->assign('order',      $order);
     $smarty->assign('goods_list', $goods_list);
     $smarty->display('user_transaction.dwt');
@@ -1550,9 +1603,49 @@ elseif ($action == 'act_account')
 			//密码验证
 			if($hgcard['password'] != $_POST['hgcard_password'])
 			{
-				show_message('',$_LANG['back_page_up'],'user.php?act=account_deposit','warning');
+				show_message($_LANG['hgcard_password_error'],$_LANG['back_page_up'],'user.php?act=account_deposit','warning');
 			}
 			
+			
+			//支付方式
+			$payment_info['pay_name'] = '欢购卡';
+			
+			//获取充值欢购卡的金额
+			$sql  = ' select money from '.$ecs->table('hgcard');
+			$sql .= ' where card_id='.$_POST['hgcard_id'].'';
+			$amount = $db->getOne($sql);
+			
+			//更新欢购卡信息
+			$sql_update_hgcard  = ' update '.$ecs->table('hgcard');
+			$sql_update_hgcard .= ' set user_id='.$_SESSION['user_id'];
+			$sql_update_hgcard .= ', user_name=\''.$_SESSION['user_name'].'\',';
+			$sql_update_hgcard .= ' use_time='.time().' ,status=1';
+			$sql_update_hgcard .= ' where card_id='.$_POST['hgcard_id'].'';
+			$db->query($sql_update_hgcard);
+			
+			//print($sql_update_hgcard);die;
+			
+			//更新用户可使用金额
+			$sql_user_money  = ' update '.$ecs->table('users');
+			$sql_user_money .= ' set user_money=user_money+'.$amount;
+			$sql_user_money .= ' where user_id ='.$_SESSION['user_id'].'';
+			$db->query($sql_user_money);
+			
+			//更新欢购重新日志
+			$sql_insert_log  = ' insert into '.$ecs->table('user_account');
+			$sql_insert_log .= ' (user_id,amount,card_id,add_time,paid_time,user_note,payment,is_paid)';
+			$sql_insert_log .= ' values(\''.$_SESSION['user_id'].'\','.$amount.','.$_POST['hgcard_id'].','.time().','.time().',';
+			$sql_insert_log .= ' \''.$_POST['user_note'].'\' , \''.$payment_info['pay_name'].'\', 1)';
+			$db->query($sql_insert_log);
+			//print($sql."<br/>");
+			//print($sql_update_hgcard."<br />");
+			//print($sql_insert_log."<br />");
+			//print($sql_user_money."<br />");
+			//die;
+			$smarty->assign('payment', $payment_info);
+			$smarty->assign('pay_fee', price_format($payment_info['pay_fee'], false));
+			$smarty->assign('amount',  price_format($amount, false));
+			$smarty->assign('order',   $order);
 			$smarty->display('user_transaction.dwt');
 		}
 		
@@ -2790,5 +2883,86 @@ elseif ($action == 'act_transform_ucenter_points')
 elseif ($action == 'clear_history')
 {
     setcookie('ECS[history]',   '', 1);
+}
+elseif($action == 'sales_return')
+{
+	$backMoney = $_POST['goods_cur_price'] * $_POST['sales_return_num']; 
+	//echo "<br />".$backMoney;
+	if($_POST['order_status_confirm'] == '未确认')
+	{
+		//在用户表中退还用户的欢购币
+
+		$sql_user  = " update ".$ecs->table("users")."set user_money=user_money+".$backMoney;
+		$sql_user .= " where user_id=".$_POST['user_id']."";
+	//	echo "<br />".$sql_user;
+		$db->query($sql_user);
+		
+		//更新订单商品标
+		$sql_query  = " select goods_number from ".$ecs->table('order_goods');
+		$sql_query .= " where goods_id=".$_POST['goods_id']."  AND order_id=".$_POST['order_id']."";
+	//	echo "<br / >sql_query==".$sql_query;
+		
+		$goods_num = $db->getOne($sql_query);
+	  
+		if($goods_num > $_POST['sales_return_num'])
+		{
+			$sql_update  = " update ".$ecs->table('order_goods');
+			$sql_update .= " set goods_number=goods_number-".$_POST['sales_return_num'];
+		} 
+		elseif($goods_num == $_POST['sales_return_num'])
+		{
+			$sql_update  = " delete from ".$ecs->table('order_goods');	
+		}
+
+		$sql_update .= " where order_id=".$_POST['order_id'];
+		$sql_update .= " and goods_id=".$_POST['goods_id']."";	
+		//echo "<br />sql_update==".$sql_update;
+	 
+	 	$db->query($sql_update);
+		
+		//更新订单表信息
+		
+		$sql_query_info  = " select goods_amount from ".$ecs->table('order_info');
+		$sql_query_info .= " where order_id=".$_POST['order_id']." and user_id=".$_POST['user_id']." ";
+	//	echo "<br / >sql_query_info==".$sql_query_info;
+		$goods_amount = $db->getOne($sql_query_info);
+		if($goods_amount > $backMoney)
+		{
+	 
+			$sql_order  = " update ".$ecs->table('order_info');
+			$sql_order .= " set goods_amount=goods_amount-".$backMoney.",";
+			$sql_order .= " order_amount=order_amount-".$backMoney;
+			$sql_order .= " where order_id=".$_POST['order_id']." and user_id=".$_POST['user_id']." ";
+			//echo "<br />sql_order==".$sql_order;
+			$db->query($sql_order);
+		}
+		else 
+		{
+			if ((!isset($back_act)|| empty($back_act)) && isset($GLOBALS['_SERVER']['HTTP_REFERER']))
+    		{
+        		$back_act = strpos($GLOBALS['_SERVER']['HTTP_REFERER'], 'user.php') ? './index.php' : $GLOBALS['_SERVER']['HTTP_REFERER'];
+    		}
+    		show_message($LANG['data_error_1'], array($_LANG['back_home_lnk'], $_LANG['back_up_page']), array($back_act, 'user.php?act=order_detail&order_id='.$_POST['order_id']), 'warning');
+		}
+		if ((!isset($back_act)|| empty($back_act)) && isset($GLOBALS['_SERVER']['HTTP_REFERER']))
+    	{
+       		$back_act = strpos($GLOBALS['_SERVER']['HTTP_REFERER'], 'user.php') ? './index.php' : $GLOBALS['_SERVER']['HTTP_REFERER'];
+    	}
+   		show_message($_LANG['sr_operate'], array($_LANG['back_home_lnk'], $_LANG['back_up_page']), array($back_act, 'user.php?act=order_detail&order_id='.$_POST['order_id']), 'info');
+	}
+	else
+	{
+		$sql_up  = " update ".$ecs->table('order_goods');
+		$sql_up .= " set is_sale_return = 1 , back_sales_num = back_sales_num + ".$_POST['sales_return_num'];
+		$sql_up .= " where order_id=".$_POST['order_id']." and goods_id=".$_POST['goods_id']." ";
+		
+		//print($sql);die;
+		$db->query($sql_up);
+		if ((!isset($back_act)|| empty($back_act)) && isset($GLOBALS['_SERVER']['HTTP_REFERER']))
+    	{
+       		$back_act = strpos($GLOBALS['_SERVER']['HTTP_REFERER'], 'user.php') ? './index.php' : $GLOBALS['_SERVER']['HTTP_REFERER'];
+    	}
+   		show_message($_LANG['sr_operate'], array($_LANG['back_home_lnk'], $_LANG['back_up_page']), array($back_act, 'user.php?act=order_detail&order_id='.$_POST['order_id']), 'info');
+	}
 }
 ?>

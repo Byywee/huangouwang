@@ -391,7 +391,7 @@ $_LANG['favourable'] = '优惠活动';
 
 /* 团购部分语言项 */
 $_LANG['group_buy'] = '团购活动';
-$_LANG['group_buy_goods'] = '团购商品';
+$_LANG['group_buy_goods'] = '欢购团';
 $_LANG['gb_goods_name'] = '团购商品：';
 $_LANG['gb_start_date'] = '开始时间：';
 $_LANG['gb_end_date'] = '结束时间：';
